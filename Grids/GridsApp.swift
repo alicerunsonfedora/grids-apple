@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct GridsApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        DocumentGroup(newDocument: WTPFile()) { file in
+            GridEditor(document: file.$document)
         }
     }
 }
