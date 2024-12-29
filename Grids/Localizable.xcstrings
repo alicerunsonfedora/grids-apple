@@ -1,22 +1,37 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "Additive" : {
+
+    },
     "Author" : {
 
     },
-    "Hello, world!" : {
-      "shouldTranslate" : false
-    },
-    "Hi" : {
-      "shouldTranslate" : false
+    "Challenges" : {
+
     },
     "Icon" : {
+
+    },
+    "Inspector" : {
 
     },
     "Metadata" : {
 
     },
     "Name" : {
+
+    },
+    "Symbol" : {
+
+    },
+    "Timer (seconds)" : {
+
+    },
+    "Value" : {
 
     }
   },

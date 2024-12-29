@@ -47,6 +47,7 @@ struct WTPDocument {
     var author: String
     var icon: FileIcon
     var puzzleCodes: [String]
+    var timer: Int = 0
 }
 
 extension WTPDocument.FileIcon: CaseIterable {}
@@ -57,6 +58,7 @@ extension WTPDocument {
         var icon: FileIcon = .generic
         var name: String = ""
         var author: String = ""
+        var timer = 0
 
         let lines = contents.components(separatedBy: "\n")
         for line in lines {
@@ -76,6 +78,8 @@ extension WTPDocument {
             case "puzzle":
                 let puzzles = value.components(separatedBy: ";")
                 puzzleCodes.append(contentsOf: puzzles)
+            case "timer":
+                timer = Int(value) ?? 0
             default:
                 break
             }
@@ -85,6 +89,7 @@ extension WTPDocument {
         self.author = author
         self.icon = icon
         self.puzzleCodes = puzzleCodes
+        self.timer = timer
     }
 
     func encoded() -> String {
@@ -95,6 +100,10 @@ extension WTPDocument {
         icon=\(self.icon.rawValue)
         """
 
+        if timer > 0 {
+            file += "\ntimer=\(timer)"
+        }
+        
         let puzzlecode = puzzleCodes.joined(separator: ";")
         file += "\npuzzle=\(puzzlecode)"
         

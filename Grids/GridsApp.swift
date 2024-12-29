@@ -11,7 +11,7 @@ import SwiftUI
 struct GridsApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: WTPFile()) { file in
-            GridEditor(document: file.$document)
+            GridEditor(file: file.$document)
         }
     }
 }

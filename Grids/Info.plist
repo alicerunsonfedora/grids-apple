@@ -5,6 +5,8 @@
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<integer>1</integer>
 			<key>CFBundleTypeName</key>
 			<string>What the Taiji?! Puzzle</string>
 			<key>CFBundleTypeRole</key>
@@ -27,7 +29,10 @@
 			<key>UTTypeDescription</key>
 			<string>What the Taiji?! Puzzle</string>
 			<key>UTTypeIcons</key>
-			<dict/>
+			<dict>
+				<key>UTTypeIconText</key>
+				<string>puzzle</string>
+			</dict>
 			<key>UTTypeIdentifier</key>
 			<string>net.marquiskurt.wtpFile</string>
 			<key>UTTypeTagSpecification</key>
@@ -49,7 +54,10 @@
 			<key>UTTypeDescription</key>
 			<string>What the Taiji?! Puzzle</string>
 			<key>UTTypeIcons</key>
-			<dict/>
+			<dict>
+				<key>UTTypeIconText</key>
+				<string>puzzle</string>
+			</dict>
 			<key>UTTypeIdentifier</key>
 			<string>net.marquiskurt.wtpFile</string>
 			<key>UTTypeTagSpecification</key>
@@ -61,7 +69,5 @@
 			</dict>
 		</dict>
 	</array>
-	<key>UISupportsDocumentBrowser</key>
-	<true/>
 </dict>
 </plist>
