@@ -8,20 +8,35 @@
 import PuzzleKit
 
 struct WTPDocument {
-    enum FileIcon: Int {
+    enum FileIcon: Int, Identifiable {
         case generic = 1
         case gardens = 2
+
+        var name: String {
+            switch self {
+            case .generic:
+                "Generic"
+            case .gardens:
+                "Gardens"
+            }
+        }
+
+        var id: Int {
+            self.rawValue
+        }
     }
     var name: String
     var author: String
-    var icon: FileIcon?
+    var icon: FileIcon
     var puzzleCodes: [String]
 }
+
+extension WTPDocument.FileIcon: CaseIterable {}
 
 extension WTPDocument {
     init(reading contents: String) {
         var puzzleCodes = [String]()
-        var icon: FileIcon? = nil
+        var icon: FileIcon = .generic
         var name: String = ""
         var author: String = ""
 
@@ -39,7 +54,10 @@ extension WTPDocument {
                 author = value
             case "icon":
                 let iconID = Int(value)
-                icon = FileIcon(rawValue: iconID ?? 0)
+                icon = FileIcon(rawValue: iconID ?? 0) ?? .generic
+            case "puzzle":
+                let puzzles = value.components(separatedBy: ";")
+                puzzleCodes.append(contentsOf: puzzles)
             default:
                 break
             }
@@ -49,5 +67,19 @@ extension WTPDocument {
         self.author = author
         self.icon = icon
         self.puzzleCodes = puzzleCodes
+    }
+
+    func encoded() -> String {
+        var file =
+        """
+        name=\(self.name)
+        author=\(self.author)
+        icon=\(self.icon.rawValue)
+        """
+
+        let puzzlecode = puzzleCodes.joined(separator: ";")
+        file += "\npuzzle=\(puzzlecode)"
+        
+        return file
     }
 }

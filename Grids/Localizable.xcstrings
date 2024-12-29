@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Author" : {
+
+    },
+    "Hello, world!" : {
+      "shouldTranslate" : false
+    },
+    "Hi" : {
+      "shouldTranslate" : false
+    },
+    "Icon" : {
+
+    },
+    "Metadata" : {
+
+    },
+    "Name" : {
+
+    }
+  },
+  "version" : "1.0"
+}

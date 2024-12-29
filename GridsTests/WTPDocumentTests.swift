@@ -21,7 +21,7 @@ puzzle=1:Tw0
         let file = WTPDocument(reading: source)
         #expect(file.name == "Geschlossene Erinnerungen")
         #expect(file.author == "Lorelei Weiss")
-        #expect(file.icon == nil)
+        #expect(file.icon == .generic)
         #expect(file.puzzleCodes == ["1:Tw0"])
     }
 
@@ -52,7 +52,7 @@ puzzle=1:Tw0;1:Z6
         let file = WTPDocument(reading: source)
         #expect(file.name == "Geschlossene Erinnerungen")
         #expect(file.author == "Lorelei Weiss")
-        #expect(file.icon == nil)
+        #expect(file.icon == .generic)
         #expect(file.puzzleCodes == ["1:Tw0", "1:Z6"])
     }
 
@@ -68,7 +68,27 @@ puzzle=1:Aw0
         let file = WTPDocument(reading: source)
         #expect(file.name == "Geschlossene Erinnerungen")
         #expect(file.author == "Lorelei Weiss")
-        #expect(file.icon == nil)
+        #expect(file.icon == .generic)
         #expect(file.puzzleCodes == ["1:Tw0", "1:Z6", "1:Aw0"])
+    }
+
+    @Test("Puzzle encodes")
+    func encodeFromNewDocument() async throws {
+        let file = WTPDocument(
+            name: "Geschlossene Erinnerungen",
+            author: "Lorelei Weiss",
+            icon: .generic,
+            puzzleCodes: ["1:Tw0", "1:Z6", "1:Aw0"]
+        )
+        let encoded = file.encoded()
+
+        let originalFile =
+        """
+        name=Geschlossene Erinnerungen
+        author=Lorelei Weiss
+        icon=1
+        puzzle=1:Tw0;1:Z6;1:Aw0
+        """
+        #expect(encoded == originalFile)
     }
 }

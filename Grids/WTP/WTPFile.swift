@@ -13,18 +13,12 @@ extension UTType {
 }
 
 struct WTPFile: FileDocument {
-    var fileContents: String
     var document: WTPDocument
 
-    static var readableContentTypes: [UTType] {
-        [
-            .wtp
-        ]
-    }
+    static var readableContentTypes: [UTType] { [.wtp] }
 
     init() {
-        fileContents = ""
-        document = .init(name: "Untitled Puzzle", author: "Author", puzzleCodes: [])
+        document = .init(name: "Untitled Puzzle", author: "Author", icon: .generic, puzzleCodes: [])
     }
     
     init(configuration: ReadConfiguration) throws {
@@ -33,12 +27,13 @@ struct WTPFile: FileDocument {
         else {
             throw CocoaError(.fileReadCorruptFile)
         }
-        fileContents = string
         document = WTPDocument(reading: string)
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let data = Data(fileContents.utf8)
+        let encodedContents = document.encoded()
+        let data = Data(encodedContents.utf8)
+        
         return .init(regularFileWithContents: data)
     }
 }

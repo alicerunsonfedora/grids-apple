@@ -1,0 +1,15 @@
+{
+  "originHash" : "2a5393f24c9fbddcc60c7dcbebba626e2182710695a04077711edf9de32a3189",
+  "pins" : [
+    {
+      "identity" : "puzzlekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alicerunsonfedora/puzzlekit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5e797121ec3be5d86373865027a3dd9270977ef1"
+      }
+    }
+  ],
+  "version" : 3
+}
