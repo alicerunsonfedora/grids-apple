@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "Add Puzzle" : {
+
+    },
     "Additive" : {
 
     },
@@ -25,7 +28,31 @@
     "Name" : {
 
     },
+    "No Puzzle Selected" : {
+
+    },
+    "No settings for active tool." : {
+
+    },
+    "Preview" : {
+
+    },
+    "Remove Puzzle" : {
+
+    },
     "Symbol" : {
+
+    },
+    "Symbol Eraser" : {
+
+    },
+    "Symbol Painter" : {
+
+    },
+    "Tile Flipper" : {
+
+    },
+    "Tile Shaper" : {
 
     },
     "Timer (seconds)" : {

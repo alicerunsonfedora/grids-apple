@@ -27,9 +27,7 @@ struct TaijiTile: View {
                     .frame(width: tileSize - 16, height: tileSize - 16)
             }
             symbol
-                .font(.title)
-                .bold()
-                .imageScale(.large)
+                .frame(width: tileSize - 16, height: tileSize - 16)
                 .foregroundStyle(color)
         }
         .frame(width: tileSize, height: tileSize)
@@ -46,14 +44,18 @@ struct TaijiTile: View {
     private var symbol: some View {
         Group {
             switch tile.symbol {
-            case .flower:
-                Image(systemName: "tree.fill")
+            case .flower(let petals):
+                Image("flower.\(petals)")
+                    .renderingMode(.template)
             case .dot(let value, let additive):
-                Image(systemName: "\(value).square\(additive ? ".fill": "")")
+                Image("dot.\(additive ? "plus": "minus").\(value)")
+                    .renderingMode(.template)
             case .diamond:
-                Image(systemName: "diamond.fill")
+                Image("diamond")
+                    .renderingMode(.template)
             case .slashdash(let rotates):
-                Image(systemName: rotates ? "line.diagonal" : "minus")
+                Image(rotates ? "slash" : "dash")
+                    .renderingMode(.template)
             case nil:
                 EmptyView()
             }
@@ -89,10 +91,11 @@ struct TaijiTile: View {
         TaijiTile(tile: .empty())
         TaijiTile(tile: .init(state: .fixed, symbol: .diamond, color: .purple))
         TaijiTile(tile: {
-            var tile = PKTaijiTile.symbolic(.slashdash(rotates: true))
+            var tile = PKTaijiTile.symbolic(.slashdash(rotates: true), coloredBy: .orange)
             tile.filled = true
             return tile
         }())
+        TaijiTile(tile: .symbolic(.flower(petals: 3)))
         TaijiTile(tile: {
             var tile = PKTaijiTile.symbolic(.dot(value: 5, additive: true))
             tile.filled = true

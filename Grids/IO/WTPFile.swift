@@ -16,7 +16,14 @@ extension UTType {
 struct WTPFile: FileDocument {
     typealias Pointer = [PKTaijiPuzzle].Index
     var document: WTPDocument
-    var currentPuzzle: PKTaijiPuzzle?
+    var currentPuzzle: PKTaijiPuzzle? {
+        didSet {
+            if let currentPuzzle {
+                let code = String(encoding: currentPuzzle)
+                document.puzzleCodes[currentPuzzleIndex] = code
+            }
+        }
+    }
     var currentPuzzleIndex: Pointer = 0
 
     static var readableContentTypes: [UTType] { [.wtp] }
@@ -39,21 +46,10 @@ struct WTPFile: FileDocument {
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        guard let currentPuzzle else { throw CocoaError(.fileWriteUnknown) }
-
-        var newDocument = document
-        newDocument.puzzleCodes[currentPuzzleIndex] = String(encoding: currentPuzzle)
-        
-        let encodedContents = newDocument.encoded()
+        let encodedContents = document.encoded()
         let data = Data(encodedContents.utf8)
         
         return .init(regularFileWithContents: data)
-    }
-
-    mutating func flipTileInCurrentPuzzle(at index: Int) {
-        guard let puzzle = currentPuzzle else { return }
-        let coordinate = index.toCoordinate(wrappingAround: puzzle.width)
-        currentPuzzle = puzzle.flippingTile(at: coordinate)
     }
 
     // MARK: - Sets
@@ -66,6 +62,15 @@ struct WTPFile: FileDocument {
 
     mutating func addPuzzleToSetAfterCurrentIndex() {
         document.puzzleCodes.insert("3:+I", at: document.puzzleCodes.index(after: currentPuzzleIndex))
+    }
+
+    mutating func removePuzzleFromSet(at index: Int) {
+        guard document.puzzleCodes.count > 1 else { return }
+        document.puzzleCodes.remove(at: index)
+        if index == currentPuzzleIndex {
+            currentPuzzleIndex = 0
+            currentPuzzle = PKTaijiPuzzle(decodingOrNull: document.puzzleCodes[0])
+        }
     }
     
     func nextPuzzleInSet() -> (Pointer, PKTaijiPuzzle)? {

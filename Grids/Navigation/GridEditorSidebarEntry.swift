@@ -8,27 +8,31 @@
 import SwiftUI
 
 struct GridEditorSidebarEntry: View {
-    @Binding var document: WTPFile
-    var index: Int
-    var code: String
+    @Binding var file: WTPFile
+    var puzzle: WTPFilePuzzle
 
     var body: some View {
         HStack(alignment: .bottom, spacing: 6) {
-            Text(index + 1, format: .number)
+            Text(puzzle.id + 1, format: .number)
+                .fontWidth(.condensed)
             ZStack {
                 RoundedRectangle(cornerRadius: 4)
                     .fill(.white)
                     .aspectRatio(3/2, contentMode: .fit)
                     .shadow(radius: 4)
-                TaijiPreviewPuzzle(puzzleCode: code)
+                TaijiPreviewPuzzle(puzzleCode: puzzle.code)
             }
+            .frame(width: 100, height: 66)
         }
         .padding(.vertical, 6)
         .padding(.horizontal, 10)
-        .background {
-            RoundedRectangle(cornerRadius: 4)
-                .fill(index == document.currentPuzzleIndex ? Color.accentColor : Color.clear)
-                .padding(.horizontal, 3)
+        .contextMenu {
+            Button {
+                file.removePuzzleFromSet(at: puzzle.id)
+            } label: {
+                Label("Remove Puzzle", systemImage: "minus")
+            }
+            .disabled(file.document.puzzleCodes.count < 2)
         }
     }
 }

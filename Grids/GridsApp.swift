@@ -12,6 +12,7 @@ struct GridsApp: App {
     var body: some Scene {
         DocumentGroup(newDocument: WTPFile()) { file in
             GridEditor(file: file.$document)
+                .toolbarRole(.automatic)
         }
     }
 }
