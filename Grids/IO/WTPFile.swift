@@ -16,21 +16,27 @@ extension UTType {
 struct WTPFile: FileDocument {
     typealias Pointer = [PKTaijiPuzzle].Index
     var document: WTPDocument
-    var currentPuzzle: PKTaijiPuzzle? {
+    var currentPuzzle: PKTaijiPuzzle {
         didSet {
-            if let currentPuzzle {
-                let code = String(encoding: currentPuzzle)
-                document.puzzleCodes[currentPuzzleIndex] = code
-            }
+            let code = String(encoding: currentPuzzle)
+            document.puzzleCodes[currentPuzzleIndex] = code
         }
     }
     var currentPuzzleIndex: Pointer = 0
 
     static var readableContentTypes: [UTType] { [.wtp] }
 
+    var puzzles: [WTPFilePuzzle] {
+        document.puzzleCodes.enumerated().map { (index, code) in
+            WTPFilePuzzle(id: index,
+                          code: code,
+                          puzzle: PKTaijiPuzzle(decodingOrNull: code))
+        }
+    }
+
     init() {
         document = .init(name: "Untitled Puzzle", author: "Author", icon: .generic, puzzleCodes: ["3:+I"])
-        currentPuzzle = PKTaijiPuzzle(decodingOrNull: "3:+I")
+        currentPuzzle = PKTaijiPuzzle(size: .init(width: 3, height: 3))
         currentPuzzleIndex = 0
     }
     
@@ -69,7 +75,9 @@ struct WTPFile: FileDocument {
         document.puzzleCodes.remove(at: index)
         if index == currentPuzzleIndex {
             currentPuzzleIndex = 0
-            currentPuzzle = PKTaijiPuzzle(decodingOrNull: document.puzzleCodes[0])
+            if let puzzle = PKTaijiPuzzle(decodingOrNull: document.puzzleCodes[0]) {
+                currentPuzzle = puzzle
+            }
         }
     }
     

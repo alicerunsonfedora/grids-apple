@@ -28,9 +28,6 @@
     "Name" : {
 
     },
-    "No Puzzle Selected" : {
-
-    },
     "No settings for active tool." : {
 
     },
@@ -38,6 +35,9 @@
 
     },
     "Remove Puzzle" : {
+
+    },
+    "Select a puzzle" : {
 
     },
     "Symbol" : {

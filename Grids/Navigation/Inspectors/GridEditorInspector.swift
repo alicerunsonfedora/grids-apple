@@ -32,13 +32,9 @@ private enum GridEditorInspectorPane: Hashable, CaseIterable {
 
 struct GridEditorInspector: View {
     @Binding var document: WTPFile
+    @Binding var toolState: EditorToolState
     @State private var currentPane = GridEditorInspectorPane.currentTool
-    @State private var symbol = EditorSymbol.diamond
-    @State private var symbolValue = 1
-    @State private var dotAdditive = true
-    
-    var editorTool: EditorTool
-    
+        
     var body: some View {
         Picker("", selection: $currentPane) {
             ForEach(GridEditorInspectorPane.allCases, id: \.self) { mode in
@@ -80,12 +76,9 @@ struct GridEditorInspector: View {
     
     private var contextualForm: some View {
         Group {
-            switch editorTool {
+            switch toolState.tool {
             case .symbolPainter:
-                GridEditorSymbolToolInspector(
-                    symbol: $symbol,
-                    symbolValue: $symbolValue,
-                    dotAdditive: $dotAdditive)
+                GridEditorSymbolToolInspector(toolState: $toolState)
             default:
                 Text("No settings for active tool.")
                     .foregroundStyle(.secondary)
@@ -97,8 +90,9 @@ struct GridEditorInspector: View {
 
 #Preview {
     @Previewable @State var file = WTPFile()
+    @Previewable @State var toolState = EditorToolState()
     NavigationStack {
-        GridEditorInspector(document: $file, editorTool: .tileFlipper)
+        GridEditorInspector(document: $file, toolState: $toolState)
     }
 }
 

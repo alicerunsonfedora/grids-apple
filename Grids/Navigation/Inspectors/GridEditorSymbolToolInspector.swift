@@ -9,22 +9,20 @@ import PuzzleKit
 import SwiftUI
 
 struct GridEditorSymbolToolInspector: View {
-    @Binding var symbol: EditorSymbol
-    @Binding var symbolValue: Int
-    @Binding var dotAdditive: Bool
+    @Binding var toolState: EditorToolState
 
     var body: some View {
         Group {
-            Picker("Symbol", selection: $symbol) {
+            Picker("Symbol", selection: $toolState.symbol) {
                 ForEach(EditorSymbol.allCases, id: \.self) { editorSymbol in
                     Label("\(editorSymbol)".capitalized, image: editorSymbol.icon)
                         .tag(editorSymbol)
                 }
             }
 
-            if symbol.isValueDependent {
+            if toolState.symbol.isValueDependent {
                 Section {
-                    Picker("Value", selection: $symbolValue) {
+                    Picker("Value", selection: $toolState.value) {
                         ForEach(0..<10) { value in
                             if valueCanBeShown(value) {
                                 Text(value, format: .number)
@@ -33,21 +31,21 @@ struct GridEditorSymbolToolInspector: View {
                             
                         }
                     }
-                    .disabled(!symbol.isValueDependent)
+                    .disabled(!toolState.symbol.isValueDependent)
                     
-                    if symbol == .dot {
-                        Toggle(isOn: $dotAdditive) {
+                    if toolState.symbol == .dot {
+                        Toggle(isOn: $toolState.dotAdditive) {
                             Text("Additive")
                         }
                     }
                 }
             }
         }
-        .animation(.easeInOut, value: symbol)
+        .animation(.easeInOut, value: toolState)
     }
     
     private func valueCanBeShown(_ value: Int) -> Bool {
-        return switch symbol {
+        return switch toolState.symbol {
         case .flower:
             (0...4).contains(value)
         case .dot:

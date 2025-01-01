@@ -16,19 +16,26 @@ struct TaijiTile: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .strokeBorder(tile.state == .invisible ? .clear : .gray, style: border)
+                .strokeBorder(tile.state == .invisible ? .clear : .tileBorder, style: border)
                 .background {
-                    tile.state == .invisible ? Color.clear : Color("TileBackground")
+                    tile.state == .invisible ? Color.clear : .tileBackground
                 }
                 .frame(width: tileSize, height: tileSize)
             if tile.filled {
                 Rectangle()
-                    .fill(.gray)
+                    .fill(.tileBorder)
                     .frame(width: tileSize - 16, height: tileSize - 16)
             }
-            symbol
-                .frame(width: tileSize - 16, height: tileSize - 16)
-                .foregroundStyle(color)
+            if let symbol = tile.symbol {
+                Image(imageName(for: symbol))
+                    .frame(width: tileSize - 16, height: tileSize - 16)
+
+                // NOTE: Somehow the rendering mode causes the tile to not render AT ALL whenever you're painting tiles.
+                // As to why this is? No clue. Maybe it's a PNG related thing?
+                
+//                    .renderingMode(.template)
+//                    .foregroundStyle(color)
+            }
         }
         .frame(width: tileSize, height: tileSize)
     }
@@ -40,25 +47,17 @@ struct TaijiTile: View {
             StrokeStyle(lineWidth: 4, dash: [12, 7])
         }
     }
-    
-    private var symbol: some View {
-        Group {
-            switch tile.symbol {
-            case .flower(let petals):
-                Image("flower.\(petals)")
-                    .renderingMode(.template)
-            case .dot(let value, let additive):
-                Image("dot.\(additive ? "plus": "minus").\(value)")
-                    .renderingMode(.template)
-            case .diamond:
-                Image("diamond")
-                    .renderingMode(.template)
-            case .slashdash(let rotates):
-                Image(rotates ? "slash" : "dash")
-                    .renderingMode(.template)
-            case nil:
-                EmptyView()
-            }
+
+    private func imageName(for symbol: PKTaijiTileSymbol) -> String {
+        switch symbol {
+        case .flower(let petals):
+            "flower.\(petals)"
+        case .dot(let value, let additive):
+            "dot.\(additive ? "plus": "minus").\(value)"
+        case .diamond:
+            "diamond"
+        case .slashdash(let rotates):
+            rotates ? "slash" : "dash"
         }
     }
     

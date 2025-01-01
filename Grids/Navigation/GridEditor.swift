@@ -18,22 +18,13 @@ enum EditorTool {
 struct GridEditor: View {
     @Binding var file: WTPFile
     @State private var selectedPuzzle: WTPFilePuzzle.ID?
-    @State private var puzzle: PKTaijiPuzzle?
     @State private var displayInspector = false
-    @State private var currentTool: EditorTool = .tileFlipper
-
-    private var puzzles: [WTPFilePuzzle] {
-        file.document.puzzleCodes.enumerated().map { (index, code) in
-            WTPFilePuzzle(id: index,
-                          code: code,
-                          puzzle: PKTaijiPuzzle(decodingOrNull: code))
-        }
-    }
-
+    @State private var toolState = EditorToolState()
+    
     var body: some View {
         NavigationSplitView {
             List(selection: $selectedPuzzle) {
-                ForEach(puzzles) { puzzle in
+                ForEach(file.puzzles) { puzzle in
                     GridEditorSidebarEntry(file: $file, puzzle: puzzle)
                 }
                 .onMove { from, to in
@@ -54,26 +45,24 @@ struct GridEditor: View {
 #endif
             
         } detail: {
-            GridCoreEditor(puzzle: $puzzle, file: $file, editorTool: currentTool)
-        }
-        .onAppear {
-            selectedPuzzle = file.document.puzzleCodes.startIndex
-            file.currentPuzzleIndex = file.document.puzzleCodes.startIndex
+            if selectedPuzzle == nil {
+                ContentUnavailableView("Select a puzzle", systemImage: "square.grid.3x3")
+            } else {
+                GridCoreEditor(puzzle: $file.currentPuzzle, toolState: toolState)
+            }
         }
         .onChange(of: selectedPuzzle ?? -1) { oldValue, newValue in
-            guard (0..<puzzles.count).contains(newValue) else { return }
+            guard (file.puzzles.startIndex...file.puzzles.endIndex).contains(newValue) else { return }
             file.currentPuzzleIndex = newValue
-            puzzle = puzzles[newValue].puzzle
-            file.currentPuzzle = puzzles[newValue].puzzle
-        }
-        .onChange(of: puzzle) { oldValue, newValue in
-            file.currentPuzzle = newValue
+            if let newPuzzle = file.puzzles[newValue].puzzle {
+                file.currentPuzzle = newPuzzle
+            }
         }
 #if os(macOS)
         .navigationSubtitle(file.document.name)
 #endif
         .inspector(isPresented: $displayInspector) {
-            GridEditorInspector(document: $file, editorTool: currentTool)
+            GridEditorInspector(document: $file, toolState: $toolState)
         }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
@@ -83,7 +72,7 @@ struct GridEditor: View {
             }
         }
         .toolbar(id: "editor.tools") {
-            GridEditorCustomizableToolbar(editorTool: $currentTool)
+            GridEditorCustomizableToolbar(editorTool: $toolState.tool)
         }
     }
 }
