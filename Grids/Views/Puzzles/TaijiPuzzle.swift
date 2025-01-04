@@ -39,7 +39,7 @@ struct TaijiPuzzle: View {
                     }
             }
         }
-        .padding(8)
+        .scaledToFit()
     }
 }
 

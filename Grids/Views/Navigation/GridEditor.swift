@@ -64,8 +64,8 @@ struct GridEditor: View {
                 }
             }
         }
-        .toolbar(id: "editor.tools") {
-            GridEditorCustomizableToolbar(editorTool: $toolState.tool)
+        .toolbar {
+            GridEditorToolbar(editorTool: $toolState.tool)
         }
     }
 }

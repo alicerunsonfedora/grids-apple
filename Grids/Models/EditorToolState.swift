@@ -8,11 +8,37 @@
 import PuzzleKit
 
 // TODO: Move this into EditorToolState.
-enum EditorTool {
+enum EditorTool: CaseIterable {
     case symbolPainter
-    case tileShaper
+    case layoutEditor
     case tileFlipper
     case eraser
+    
+    var name: String {
+        switch self {
+        case .symbolPainter:
+            "Symbol Painer"
+        case .layoutEditor:
+            "Layout Editor"
+        case .tileFlipper:
+            "Tile Flipper"
+        case .eraser:
+            "Symbol Eraser"
+        }
+    }
+    
+    var systemImage: String {
+        switch self {
+        case .symbolPainter:
+            "paintbrush"
+        case .layoutEditor:
+            "aspectratio"
+        case .tileFlipper:
+            "arrow.clockwise.square"
+        case .eraser:
+            "eraser"
+        }
+    }
 }
 
 struct EditorToolState: Equatable {

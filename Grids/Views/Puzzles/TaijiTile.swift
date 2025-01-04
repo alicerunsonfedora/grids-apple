@@ -28,13 +28,15 @@ struct TaijiTile: View {
             }
             if let symbol = tile.symbol {
                 Image(imageName(for: symbol))
-                    .frame(width: tileSize - 16, height: tileSize - 16)
-
+                
                 // NOTE: Somehow the rendering mode causes the tile to not render AT ALL whenever you're painting tiles.
                 // As to why this is? No clue. Maybe it's a PNG related thing?
                 
 //                    .renderingMode(.template)
 //                    .foregroundStyle(color)
+                
+                
+                    .frame(width: tileSize - 16, height: tileSize - 16)
             }
         }
         .frame(width: tileSize, height: tileSize)

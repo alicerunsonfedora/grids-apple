@@ -36,7 +36,7 @@ extension PKTaijiTileState: @retroactive CaseIterable {
     }
 }
 
-struct GridEditorTileShaperInspector: View {
+struct GridEditorLayoutEditorInspector: View {
     @Binding var toolState: EditorToolState
 
     var body: some View {
@@ -55,7 +55,7 @@ struct GridEditorTileShaperInspector: View {
 #Preview {
     @Previewable @State var editorState = EditorToolState()
     Form {
-        GridEditorTileShaperInspector(toolState: $editorState)
+        GridEditorLayoutEditorInspector(toolState: $editorState)
     }
     .frame(minHeight: 100)
 }
