@@ -24,7 +24,7 @@ struct TaijiPreviewPuzzle: View {
                 }
             }
             .font(.subheadline)
-            .imageScale(.large)
+            .imageScale(.medium)
             .foregroundStyle(.gray)
             .background(Color.white)
         }

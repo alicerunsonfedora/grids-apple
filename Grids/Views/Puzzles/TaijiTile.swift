@@ -16,9 +16,9 @@ struct TaijiTile: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .strokeBorder(tile.state == .invisible ? .clear : .tileBorder, style: border)
+                .strokeBorder(tile.state == .invisible ? Color.systemBackground : .tileBorder, style: border)
                 .background {
-                    tile.state == .invisible ? Color.clear : .tileBackground
+                    tile.state == .invisible ? Color.systemBackground : .tileBackground
                 }
                 .frame(width: tileSize, height: tileSize)
             if tile.filled {

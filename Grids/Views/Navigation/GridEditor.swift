@@ -8,17 +8,10 @@
 import SwiftUI
 import PuzzleKit
 
-enum EditorTool {
-    case symbolPainter
-    case tileShaper
-    case tileFlipper
-    case eraser
-}
-
 struct GridEditor: View {
     @Binding var file: WTPFile
     @State private var selectedPuzzle: WTPFilePuzzle.ID?
-    @State private var displayInspector = false
+    @State private var displayInspector = true
     @State private var toolState = EditorToolState()
     
     var body: some View {

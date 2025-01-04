@@ -79,6 +79,8 @@ struct GridEditorInspector: View {
             switch toolState.tool {
             case .symbolPainter:
                 GridEditorSymbolToolInspector(toolState: $toolState)
+            case .tileShaper:
+                GridEditorTileShaperInspector(toolState: $toolState)
             default:
                 Text("No settings for active tool.")
                     .foregroundStyle(.secondary)

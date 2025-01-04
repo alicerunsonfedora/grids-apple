@@ -27,8 +27,8 @@ struct GridCoreEditor: View {
             self.puzzle = puzzle.replacingSymbol(at: coordinate, with: nil)
         case .tileFlipper:
             self.puzzle = puzzle.flippingTile(at: coordinate)
-        default:
-            break
+        case .tileShaper:
+            self.puzzle = puzzle.applyingState(at: coordinate, with: toolState.shaperKind)
         }
     }
 }

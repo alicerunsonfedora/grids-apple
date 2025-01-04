@@ -7,11 +7,20 @@
 
 import PuzzleKit
 
+// TODO: Move this into EditorToolState.
+enum EditorTool {
+    case symbolPainter
+    case tileShaper
+    case tileFlipper
+    case eraser
+}
+
 struct EditorToolState: Equatable {
     var tool: EditorTool = .tileFlipper
     var symbol: EditorSymbol = .diamond
     var value: Int = 1
-    var dotAdditive: Bool = false
+    var dotAdditive: Bool = true
+    var shaperKind: PKTaijiTileState = .normal
     
     var taijiTileSymbol: PKTaijiTileSymbol {
         switch symbol {

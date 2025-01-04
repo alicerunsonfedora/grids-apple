@@ -55,3 +55,11 @@ struct GridEditorSymbolToolInspector: View {
         }
     }
 }
+
+#Preview {
+    @Previewable @State var editorState = EditorToolState()
+    Form {
+        GridEditorSymbolToolInspector(toolState: $editorState)
+    }
+    .frame(minHeight: 100)
+}
