@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		953125662D2C8FCC008489EF /* Grids.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Grids.xctestplan; sourceTree = "<group>"; };
 		95357B132D2087A500E4C8EC /* Grids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95357B242D2087A600E4C8EC /* GridsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95357B2E2D2087A600E4C8EC /* GridsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +94,7 @@
 		95357B0A2D2087A500E4C8EC = {
 			isa = PBXGroup;
 			children = (
+				953125662D2C8FCC008489EF /* Grids.xctestplan */,
 				95357B152D2087A500E4C8EC /* Grids */,
 				95357B272D2087A600E4C8EC /* GridsTests */,
 				95357B312D2087A600E4C8EC /* GridsUITests */,

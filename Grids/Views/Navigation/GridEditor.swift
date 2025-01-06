@@ -65,7 +65,7 @@ struct GridEditor: View {
             }
         }
         .toolbar {
-            GridEditorToolbar(editorTool: $toolState.tool)
+            GridEditorToolbar(editorTool: $toolState.tool, puzzle: file.currentPuzzle)
         }
     }
 }
