@@ -5,6 +5,7 @@
 //  Created by Marquis Kurt on 30-12-2024.
 //
 
+import SwiftUI
 import PuzzleKit
 
 // TODO: Move this into EditorToolState.
@@ -14,10 +15,10 @@ enum EditorTool: CaseIterable {
     case tileFlipper
     case eraser
     
-    var name: String {
+    var name: LocalizedStringKey {
         switch self {
         case .symbolPainter:
-            "Symbol Painer"
+            "Symbol Painter"
         case .layoutEditor:
             "Layout Editor"
         case .tileFlipper:

@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "%@" : {
+
+    },
     "%lld" : {
 
     },
@@ -29,10 +32,25 @@
     "Challenges" : {
 
     },
+    "Check..." : {
+
+    },
+    "Create a new puzzle to add to your set, rearrange the puzzle to your desired order, and remove them from the sidebar." : {
+
+    },
+    "Current Tool" : {
+
+    },
     "Icon" : {
 
     },
     "Inspector" : {
+
+    },
+    "Layout Editor" : {
+
+    },
+    "Manage your puzzles here." : {
 
     },
     "Metadata" : {
@@ -47,6 +65,9 @@
     "Preview" : {
 
     },
+    "Puzzle Player" : {
+
+    },
     "Quick Share" : {
 
     },
@@ -56,10 +77,28 @@
     "Select a puzzle" : {
 
     },
+    "Share the current puzzle you're working on with friends via a quick link." : {
+
+    },
+    "Share your puzzle with others." : {
+
+    },
+    "Solved" : {
+
+    },
     "Style" : {
 
     },
     "Symbol" : {
+
+    },
+    "Symbol Eraser" : {
+
+    },
+    "Symbol Painter" : {
+
+    },
+    "Tile Flipper" : {
 
     },
     "Timer (seconds)" : {

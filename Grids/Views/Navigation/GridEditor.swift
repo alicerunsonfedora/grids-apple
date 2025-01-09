@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import TipKit
 import PuzzleKit
 
 struct GridEditor: View {
     @Binding var file: WTPFile
     @State private var selectedPuzzle: WTPFilePuzzle.ID?
-    @State private var displayInspector = true
+    @State private var displayInspector = false
     @State private var toolState = EditorToolState()
+
+    private let sidebarTip = PuzzleSetTip()
     
     var body: some View {
         NavigationSplitView {
@@ -23,7 +26,10 @@ struct GridEditor: View {
                 .onMove { from, to in
                     file.document.puzzleCodes.move(fromOffsets: from, toOffset: to)
                 }
+                TipView(sidebarTip)
+                    .listRowBackground(Color.clear)
             }
+            .listStyle(.sidebar)
             .toolbar {
                 Button {
                     withAnimation {
