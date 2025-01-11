@@ -13,7 +13,7 @@ struct GridEditor: View {
     @Binding var file: WTPFile
     @State private var selectedPuzzle: WTPFilePuzzle.ID?
     @State private var displayInspector = false
-    @State private var toolState = EditorToolState()
+    @State private var toolState = EditorState()
 
     private let sidebarTip = PuzzleSetTip()
     

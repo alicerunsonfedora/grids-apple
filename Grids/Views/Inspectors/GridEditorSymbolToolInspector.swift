@@ -9,7 +9,7 @@ import PuzzleKit
 import SwiftUI
 
 struct GridEditorSymbolToolInspector: View {
-    @Binding var toolState: EditorToolState
+    @Binding var toolState: EditorState
 
     var body: some View {
         Group {
@@ -57,7 +57,7 @@ struct GridEditorSymbolToolInspector: View {
 }
 
 #Preview {
-    @Previewable @State var editorState = EditorToolState()
+    @Previewable @State var editorState = EditorState()
     Form {
         GridEditorSymbolToolInspector(toolState: $editorState)
     }

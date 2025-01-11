@@ -22,7 +22,7 @@ struct GridCoreEditor: View {
     }
 
     @Binding var puzzle: PKTaijiPuzzle
-    var toolState: EditorToolState
+    var toolState: EditorState
 
     @State private var isDragging: DragDirection? = nil
 
@@ -33,7 +33,7 @@ struct GridCoreEditor: View {
     }
 
     var horizontalDrag: some Gesture {
-        DragGesture(minimumDistance: baseTileSize)
+        DragGesture(minimumDistance: baseTileSize / 2)
             .onChanged { value in
                 if isDragging == nil { isDragging = .horizontal }
                 let shouldAddColumn = value.translation.width > 0
@@ -48,7 +48,7 @@ struct GridCoreEditor: View {
     }
 
     var verticalDrag: some Gesture {
-        DragGesture(minimumDistance: baseTileSize)
+        DragGesture(minimumDistance: baseTileSize / 2)
             .onChanged { value in
                 if isDragging == nil { isDragging = .vertical }
                 let shouldAddRow = value.translation.height > 0
@@ -145,7 +145,7 @@ struct GridCoreEditor: View {
     @State var puzzle = PKTaijiPuzzle(size: .init(width: 3, height: 3))
     
     @Previewable
-    @State var editorToolState = EditorToolState()
+    @State var editorToolState = EditorState()
     
     GridCoreEditor(puzzle: $puzzle, toolState: editorToolState)
 }

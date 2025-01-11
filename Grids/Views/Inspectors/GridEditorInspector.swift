@@ -32,7 +32,7 @@ private enum GridEditorInspectorPane: Hashable, CaseIterable {
 
 struct GridEditorInspector: View {
     @Binding var document: WTPFile
-    @Binding var toolState: EditorToolState
+    @Binding var toolState: EditorState
     @State private var currentPane = GridEditorInspectorPane.currentTool
         
     var body: some View {
@@ -92,7 +92,7 @@ struct GridEditorInspector: View {
 
 #Preview {
     @Previewable @State var file = WTPFile()
-    @Previewable @State var toolState = EditorToolState()
+    @Previewable @State var toolState = EditorState()
     NavigationStack {
         GridEditorInspector(document: $file, toolState: $toolState)
     }

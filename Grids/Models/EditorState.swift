@@ -8,7 +8,7 @@
 import SwiftUI
 import PuzzleKit
 
-struct EditorToolState: Equatable {
+struct EditorState: Equatable {
     enum Tool: CaseIterable, Equatable {
         case symbolPainter
         case layoutEditor
@@ -37,7 +37,7 @@ struct EditorToolState: Equatable {
     }
 }
 
-extension EditorToolState.Tool {
+extension EditorState.Tool {
     var name: LocalizedStringKey {
         switch self {
         case .symbolPainter:
