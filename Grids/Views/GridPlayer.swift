@@ -50,6 +50,7 @@ struct GridPlayer: View {
             } label: {
                 Label("Check...", image: "square.grid.3x3.fill.badge.checkmark")
             }
+            .keyboardShortcut(.return, modifiers: .command)
         }
     }
     
