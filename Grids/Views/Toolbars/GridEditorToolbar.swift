@@ -12,7 +12,7 @@ import TipKit
 struct GridEditorToolbar: ToolbarContent {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.openWindow) private var openWindow
-    @Binding var editorTool: EditorTool
+    @Binding var editorTool: EditorToolState.Tool
     var puzzle: PKTaijiPuzzle
     
     var body: some ToolbarContent {
@@ -51,7 +51,7 @@ struct GridEditorToolbar: ToolbarContent {
 
     private var toolPicker: some View {
         Picker("Current Tool", selection: $editorTool) {
-            ForEach(EditorTool.allCases, id: \.self) { tool in
+            ForEach(EditorToolState.Tool.allCases, id: \.self) { tool in
                 Label(tool.name, systemImage: tool.systemImage)
                     .tag(tool)
             }
@@ -60,7 +60,7 @@ struct GridEditorToolbar: ToolbarContent {
 }
 
 #Preview {
-    @Previewable @State var editorTool = EditorTool.layoutEditor
+    @Previewable @State var editorTool = EditorToolState.Tool.layoutEditor
     NavigationStack {
         Text("Foo")
             .padding()
