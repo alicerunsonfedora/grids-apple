@@ -11,6 +11,10 @@ struct GridEditorSidebarEntry: View {
     @Binding var file: WTPFile
     var puzzle: WTPFilePuzzle
 
+    private var cardSize: CGSize {
+        .init(width: 100 * 1.25, height: 66 * 1.25)
+    }
+
     var body: some View {
         HStack(alignment: .bottom, spacing: 6) {
             Text(puzzle.id + 1, format: .number)
@@ -21,8 +25,12 @@ struct GridEditorSidebarEntry: View {
                     .aspectRatio(3/2, contentMode: .fit)
                     .shadow(radius: 4)
                 TaijiPreviewPuzzle(puzzleCode: puzzle.code)
+                    .frame(width: cardSize.width, height: cardSize.height)
+                    .clipped()
+                    .clipShape(
+                        RoundedRectangle(cornerRadius: 4))
             }
-            .frame(width: 100, height: 66)
+            .frame(width: cardSize.width, height: cardSize.height)
         }
         .padding(.vertical, 6)
         .padding(.horizontal, 10)

@@ -12,6 +12,7 @@ import TipKit
 struct GridEditorToolbar: ToolbarContent {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.openWindow) private var openWindow
+    @AppStorage("run.ignorevalidation") private var ignoreValidation = false
     @Binding var editorTool: EditorState.Tool
     var puzzle: PKTaijiPuzzle
     
@@ -33,7 +34,12 @@ struct GridEditorToolbar: ToolbarContent {
         
         ToolbarItem(id: "tool.preview", placement: .primaryAction) {
             Button {
-                openWindow(id: "player", value: puzzle)
+                let issues = PuzzleIssueValidator.validate(puzzle)
+                let containsErrors = issues.contains { $0.severity == .error }
+
+                if !containsErrors || (containsErrors && ignoreValidation) {
+                    openWindow(id: "player", value: puzzle)
+                }
             } label: {
                 Label("Preview", systemImage: "play.fill")
             }

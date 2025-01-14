@@ -35,7 +35,7 @@ extension Issue {
 
     static func layoutExceedsSize(_ size: CGSize) -> Issue {
         Issue(
-            "This puzzle is too big for What the Taiji?!",
+            "This puzzle is too big for Playdate.",
             description: String(
                 format: "This puzzle is %d x %d tiles, which exceeds 22 x 13 tiles.",
                 Int(size.width),

@@ -29,6 +29,10 @@ struct GridsApp: App {
         .withRestorationDisabled()
         .defaultPosition(.center)
         .defaultSize(width: 300, height: 200)
+        
+        Settings {
+            SettingsView()
+        }
     }
     
     init() {

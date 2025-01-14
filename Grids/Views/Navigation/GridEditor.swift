@@ -10,6 +10,8 @@ import TipKit
 import PuzzleKit
 
 struct GridEditor: View {
+    @AppStorage("build.showlive") var showLiveIssues = true
+
     @Binding var file: WTPFile
     @State private var selectedPuzzle: WTPFilePuzzle.ID?
     @State private var displayInspector = false
@@ -32,15 +34,6 @@ struct GridEditor: View {
                     issuePane
                 }
             }
-            .toolbar {
-                Button {
-                    withAnimation {
-                        file.addPuzzleToSetAfterCurrentIndex()
-                    }
-                } label: {
-                    Label("Add Puzzle", image: "square.grid.3x3.fill.badge.plus")
-                }
-            }
             .frame(minWidth: 250, idealWidth: 280)
             
         } detail: {
@@ -57,11 +50,15 @@ struct GridEditor: View {
             file.currentPuzzleIndex = newValue
             if let newPuzzle = file.puzzles[newValue].puzzle {
                 file.currentPuzzle = newPuzzle
-                self.issues = PuzzleIssueValidator.validate(newPuzzle)
+                if showLiveIssues {
+                    self.issues = PuzzleIssueValidator.validate(newPuzzle)
+                }
             }
         }
         .onChange(of: file.currentPuzzle) { _, newPuzzle in
-            self.issues = PuzzleIssueValidator.validate(newPuzzle)
+            if showLiveIssues {
+                self.issues = PuzzleIssueValidator.validate(newPuzzle)
+            }
         }
         .inspector(isPresented: $displayInspector) {
             GridEditorInspector(document: $file, toolState: $toolState)
@@ -101,6 +98,25 @@ struct GridEditor: View {
                 .listRowBackground(Color.clear)
         }
         .listStyle(.sidebar)
+        .overlay(alignment: .bottom) {
+            VStack {
+                Divider()
+                HStack {
+                    Button {
+                        withAnimation {
+                            file.addPuzzleToSetAfterCurrentIndex()
+                        }
+                    } label: {
+                        Label("Add Puzzle", image: "square.grid.3x3.fill.badge.plus")
+                    }
+                }
+                .padding(.vertical, 3)
+                .padding(.bottom, 6)
+                .buttonStyle(.plain)
+                .labelStyle(.iconOnly)
+            }
+            .background(.thinMaterial)
+        }
     }
     
     private var issuePane: some View {

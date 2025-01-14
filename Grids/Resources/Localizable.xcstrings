@@ -29,10 +29,16 @@
     "Check..." : {
 
     },
+    "Continue running after errors" : {
+
+    },
     "Create a new puzzle to add to your set, rearrange the puzzle to your desired order, and remove them from the sidebar." : {
 
     },
     "Current Tool" : {
+
+    },
+    "General" : {
 
     },
     "Icon" : {
@@ -77,6 +83,9 @@
     "Remove Puzzle" : {
 
     },
+    "Reset Tips..." : {
+
+    },
     "Select a puzzle" : {
 
     },
@@ -84,6 +93,9 @@
 
     },
     "Share your puzzle with others." : {
+
+    },
+    "Show live issues" : {
 
     },
     "Solved" : {
