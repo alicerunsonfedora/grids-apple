@@ -9,14 +9,10 @@ import SwiftUI
 
 extension Scene {
     func withRestorationDisabled() -> some Scene {
-        #if os(macOS)
         if #available(macOS 15.0, *) {
             return self.restorationBehavior(.disabled)
         } else {
             return self
         }
-        #else
-        return self
-        #endif
     }
 }

@@ -37,6 +37,7 @@ struct TaijiTile: View {
                 
                 
                     .frame(width: tileSize - 16, height: tileSize - 16)
+                    .scaledToFit()
             }
         }
         .frame(width: tileSize, height: tileSize)

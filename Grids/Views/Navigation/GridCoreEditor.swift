@@ -27,44 +27,22 @@ struct GridCoreEditor: View {
     @State private var isDragging: DragDirection? = nil
 
     private let baseTileSize: CGFloat = 64
-
-    private var dragHandleSize: CGSize {
-        CGSize(width: 64, height: 16)
-    }
-
-    var horizontalDrag: some Gesture {
-        DragGesture(minimumDistance: baseTileSize / 2)
-            .onChanged { value in
-                if isDragging == nil { isDragging = .horizontal }
-                let shouldAddColumn = value.translation.width > 0
-                if abs(value.translation.width) > baseTileSize {
-                    self.adjustLayout(shouldAddColumn ? .addColumn : .removeColumn)
-                }
-
-            }
-            .onEnded { _ in
-                isDragging = nil
-            }
-    }
-
-    var verticalDrag: some Gesture {
-        DragGesture(minimumDistance: baseTileSize / 2)
-            .onChanged { value in
-                if isDragging == nil { isDragging = .vertical }
-                let shouldAddRow = value.translation.height > 0
-                if abs(value.translation.height) > baseTileSize {
-                    self.adjustLayout(shouldAddRow ? .addRow : .removeRow)
-                }
-            }
-            .onEnded { _ in
-                isDragging = nil
-            }
+    
+    var scale: CGFloat {
+        switch (puzzle.width, puzzle.height) {
+        case (20..., _), (_, 14...):
+            return 0.5
+        case (11..<20, _), (_, 7..<14):
+            return 0.75
+        default:
+            return 1.0
+        }
     }
 
     var body: some View {
         HStack {
             Spacer()
-            TaijiPuzzle(puzzle: puzzle) { tileIndex in
+            TaijiPuzzle(scale: baseTileSize * scale, puzzle: puzzle) { tileIndex in
                 performActionForTool(at: tileIndex)
             }
             .opacity(isDragging != nil ? 0 : 1)
@@ -108,8 +86,44 @@ struct GridCoreEditor: View {
             Spacer()
         }
         .animation(.bouncy, value: isDragging)
+        .animation(.easeInOut, value: scale)
     }
 
+    // MARK: - Drag Gestures
+    private var dragHandleSize: CGSize {
+        CGSize(width: 64, height: 16)
+    }
+
+    var horizontalDrag: some Gesture {
+        DragGesture(minimumDistance: baseTileSize / 2)
+            .onChanged { value in
+                if isDragging == nil { isDragging = .horizontal }
+                let shouldAddColumn = value.translation.width > 0
+                if abs(value.translation.width) > (baseTileSize * scale) {
+                    self.adjustLayout(shouldAddColumn ? .addColumn : .removeColumn)
+                }
+
+            }
+            .onEnded { _ in
+                isDragging = nil
+            }
+    }
+
+    var verticalDrag: some Gesture {
+        DragGesture(minimumDistance: baseTileSize / 2)
+            .onChanged { value in
+                if isDragging == nil { isDragging = .vertical }
+                let shouldAddRow = value.translation.height > 0
+                if abs(value.translation.height) > (baseTileSize * scale) {
+                    self.adjustLayout(shouldAddRow ? .addRow : .removeRow)
+                }
+            }
+            .onEnded { _ in
+                isDragging = nil
+            }
+    }
+    
+    
     private func performActionForTool(at index: Int) {
         let coordinate = index.toCoordinate(wrappingAround: puzzle.width)
         switch toolState.tool {

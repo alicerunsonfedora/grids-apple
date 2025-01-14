@@ -19,23 +19,23 @@ extension PKTaijiPuzzle {
 }
 
 struct TaijiPuzzle: View {
-    @ScaledMetric var tileSize = 64
+    @ScaledMetric var scale = 64
     var puzzle: PKTaijiPuzzle
 
-    var onTapIndexCallback: ((Int) -> Void)?
+    var tapIndexCallback: ((Int) -> Void)?
 
     var layout: [GridItem] {
         Array(
-            repeating: GridItem(.fixed(tileSize)),
+            repeating: GridItem(.fixed(scale)),
             count: puzzle.width)
     }
 
     var body: some View {
         LazyVGrid(columns: layout, spacing: 8) {
             ForEach(Array(zip(puzzle.tiles.indices, puzzle.tiles)), id: \.0) { (index, tile) in
-                TaijiTile(tileSize: tileSize, tile: tile)
+                TaijiTile(tileSize: scale, tile: tile)
                     .onTapGesture {
-                        onTapIndexCallback?(index)
+                        tapIndexCallback?(index)
                     }
             }
         }
