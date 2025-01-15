@@ -25,7 +25,7 @@ struct GridEditorSidebarEntry: View {
                     .fill(.white)
                     .aspectRatio(3/2, contentMode: .fit)
                     .shadow(radius: 4)
-                TaijiPreviewPuzzle(puzzleCode: puzzle.code)
+                TaijiPreviewPuzzleView(puzzle.code)
                     .frame(width: cardSize.width, height: cardSize.height)
                     .clipped()
                     .clipShape(

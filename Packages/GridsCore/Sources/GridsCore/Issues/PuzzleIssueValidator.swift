@@ -6,11 +6,13 @@
 //
 
 import Foundation
-import GridsCore
 import PuzzleKit
 
-enum PuzzleIssueValidator {
-    static func validate(_ puzzle: PKTaijiPuzzle) -> Set<Issue> {
+/// An issue validator that validates a puzzle.
+public enum PuzzleIssueValidator {
+    /// Validates the specified puzzle and reports any issues found.
+    /// - Parameter puzzle: The puzzle to validate and generate an issue report for.
+    public static func validate(_ puzzle: PKTaijiPuzzle) -> Set<Issue> {
         var issuesFound = Set<Issue>()
 
         switch (puzzle.width, puzzle.height) {
