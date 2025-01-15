@@ -18,6 +18,18 @@ struct GridsApp: App {
                 .toolbarRole(.automatic)
         }
 
+        WindowGroup {
+            if #available(macOS 15.0, *) {
+                WelcomeView()
+                    .toolbarVisibility(.hidden, for: .windowToolbar)
+            } else {
+                WelcomeView()
+            }
+        }
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
+        .setAsWelcomeWindow()
+        
         // TODO: Why does having another WindowGroup cause the DocumentGroup's "New Document" button to disappear? WTF?
         WindowGroup(id: "player", for: PKTaijiPuzzle.self) { puzzle in
             NavigationStack {

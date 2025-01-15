@@ -32,6 +32,9 @@
     "Create a new puzzle to add to your set, rearrange the puzzle to your desired order, and remove them from the sidebar." : {
 
     },
+    "Create New Puzzle" : {
+
+    },
     "Current Tool" : {
 
     },
@@ -63,6 +66,9 @@
 
     },
     "No settings for active tool." : {
+
+    },
+    "Open Puzzle..." : {
 
     },
     "Preview" : {
@@ -117,6 +123,9 @@
 
     },
     "Value" : {
+
+    },
+    "Welcome to Grids" : {
 
     }
   },
