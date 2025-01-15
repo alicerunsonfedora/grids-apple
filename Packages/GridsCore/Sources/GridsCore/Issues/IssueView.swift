@@ -7,10 +7,16 @@
 
 import SwiftUI
 
-struct IssueView: View {
-    var issue: Issue
+/// A view that displays an issue in the issue navigator.
+public struct IssueView: View {
+    /// The issue that will be displayed in this view.
+    public var issue: Issue
+
+    public init(issue: Issue) {
+        self.issue = issue
+    }
     
-    var body: some View {
+    public var body: some View {
         if let description = issue.description {
             DisclosureGroup {
                 Text(description)

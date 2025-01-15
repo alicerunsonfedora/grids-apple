@@ -7,14 +7,21 @@
 
 import SwiftUI
 
-struct IssueCounterView: View {
-    var issues: Set<Issue>
+/// A view that displays the number of issues, organized by severity.
+public struct IssueCounterView: View {
+    /// The issues that will be counted in this view.
+    public var issues: Set<Issue>
 
-    var errors: Int { issues.count {$0.severity == .error} }
-    var warnings: Int { issues.count {$0.severity == .warning} }
-    var runtimeWarnings: Int { issues.count {$0.severity == .runtimeWarning} }
+    /// Creates an issue counter view for the current issue set.
+    public init(issues: Set<Issue>) {
+        self.issues = issues
+    }
+
+    private var errors: Int { issues.count {$0.severity == .error} }
+    private var warnings: Int { issues.count {$0.severity == .warning} }
+    private var runtimeWarnings: Int { issues.count {$0.severity == .runtimeWarning} }
     
-    var body: some View {
+    public var body: some View {
         HStack(spacing: 2) {
             if warnings > 0 {
                 Image(systemName: "exclamationmark.triangle.fill")

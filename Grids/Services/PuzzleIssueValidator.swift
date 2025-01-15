@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import GridsCore
 import PuzzleKit
 
 enum PuzzleIssueValidator {

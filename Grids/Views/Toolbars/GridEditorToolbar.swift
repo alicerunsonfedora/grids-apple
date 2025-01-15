@@ -5,6 +5,7 @@
 //  Created by Marquis Kurt on 29-12-2024.
 //
 
+import GridsCore
 import PuzzleKit
 import SwiftUI
 import TipKit

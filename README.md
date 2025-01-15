@@ -21,7 +21,7 @@ puzzles in the style/mechanics of [Taiji](https://taiji-game.com), saved as
 - macOS Sequoia (15.0) or later
 - Xcode 16.2 or later
 
-Start by cloning this repository with `git clone`, then open the Grids.xcodeproj
+Start by cloning this repository with `git clone`, then open the Grids.xcworkspace
 file on your Mac. Finally, select the "Grids" target and run the project.
 
 ## License

@@ -8,7 +8,7 @@
 import Foundation
 import Testing
 import PuzzleKit
-@testable import Grids
+@testable import GridsCore
 
 private let puzzle = PKTaijiPuzzle(size: CGSize(width: 3, height: 3))
 

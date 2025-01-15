@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95357B432D20882D00E4C8EC /* PuzzleKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95357B422D20882D00E4C8EC /* PuzzleKit */; };
+		959C6FC72D36DD4D00374E0E /* GridsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 959C6FC62D36DD4D00374E0E /* GridsCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +27,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		959C6F532D36D9C400374E0E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		953125662D2C8FCC008489EF /* Grids.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Grids.xctestplan; sourceTree = "<group>"; };
 		95357B132D2087A500E4C8EC /* Grids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95357B242D2087A600E4C8EC /* GridsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95357B2E2D2087A600E4C8EC /* GridsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GridsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95357B432D20882D00E4C8EC /* PuzzleKit in Frameworks */,
+				959C6FC72D36DD4D00374E0E /* GridsCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +106,10 @@
 		95357B0A2D2087A500E4C8EC = {
 			isa = PBXGroup;
 			children = (
-				953125662D2C8FCC008489EF /* Grids.xctestplan */,
 				95357B152D2087A500E4C8EC /* Grids */,
 				95357B272D2087A600E4C8EC /* GridsTests */,
 				95357B312D2087A600E4C8EC /* GridsUITests */,
+				959C6FC52D36DD4D00374E0E /* Frameworks */,
 				95357B142D2087A500E4C8EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +124,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		959C6FC52D36DD4D00374E0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,17 +141,19 @@
 				95357B0F2D2087A500E4C8EC /* Sources */,
 				95357B102D2087A500E4C8EC /* Frameworks */,
 				95357B112D2087A500E4C8EC /* Resources */,
+				959C6F532D36D9C400374E0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				959C6FC92D36DD5600374E0E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				95357B152D2087A500E4C8EC /* Grids */,
 			);
 			name = Grids;
 			packageProductDependencies = (
-				95357B422D20882D00E4C8EC /* PuzzleKit */,
+				959C6FC62D36DD4D00374E0E /* GridsCore */,
 			);
 			productName = Grids;
 			productReference = 95357B132D2087A500E4C8EC /* Grids.app */;
@@ -217,7 +238,7 @@
 			mainGroup = 95357B0A2D2087A500E4C8EC;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				95357B412D20882D00E4C8EC /* XCRemoteSwiftPackageReference "puzzlekit" */,
+				959C6FC22D36DD4000374E0E /* XCLocalSwiftPackageReference "Packages/GridsCore" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 95357B142D2087A500E4C8EC /* Products */;
@@ -289,6 +310,10 @@
 			isa = PBXTargetDependency;
 			target = 95357B122D2087A500E4C8EC /* Grids */;
 			targetProxy = 95357B2F2D2087A600E4C8EC /* PBXContainerItemProxy */;
+		};
+		959C6FC92D36DD5600374E0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 959C6FC82D36DD5600374E0E /* GridsCore */;
 		};
 /* End PBXTargetDependency section */
 
@@ -624,22 +649,23 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		95357B412D20882D00E4C8EC /* XCRemoteSwiftPackageReference "puzzlekit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alicerunsonfedora/puzzlekit";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		959C6FC22D36DD4000374E0E /* XCLocalSwiftPackageReference "Packages/GridsCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/GridsCore;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		95357B422D20882D00E4C8EC /* PuzzleKit */ = {
+		959C6FC62D36DD4D00374E0E /* GridsCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 95357B412D20882D00E4C8EC /* XCRemoteSwiftPackageReference "puzzlekit" */;
-			productName = PuzzleKit;
+			package = 959C6FC22D36DD4000374E0E /* XCLocalSwiftPackageReference "Packages/GridsCore" */;
+			productName = GridsCore;
+		};
+		959C6FC82D36DD5600374E0E /* GridsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 959C6FC22D36DD4000374E0E /* XCLocalSwiftPackageReference "Packages/GridsCore" */;
+			productName = GridsCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

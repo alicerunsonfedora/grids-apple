@@ -57,6 +57,17 @@
                ReferencedContainer = "container:Grids.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "959C6F442D36D9C400374E0E"
+               BuildableName = "GridsCoreTests.xctest"
+               BlueprintName = "GridsCoreTests"
+               ReferencedContainer = "container:Grids.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

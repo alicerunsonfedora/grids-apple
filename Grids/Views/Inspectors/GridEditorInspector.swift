@@ -5,6 +5,7 @@
 //  Created by Marquis Kurt on 28-12-2024.
 //
 
+import GridsCore
 import SwiftUI
 
 private enum GridEditorInspectorPane: Hashable, CaseIterable {
@@ -36,15 +37,15 @@ struct GridEditorInspector: View {
     @State private var currentPane = GridEditorInspectorPane.currentTool
         
     var body: some View {
-        Picker("", selection: $currentPane) {
-            ForEach(GridEditorInspectorPane.allCases, id: \.self) { mode in
-                Label(mode.name, systemImage: mode.icon)
-                    .tag(mode)
-            }
-        }
-        .pickerStyle(.segmented)
-        .labelStyle(.iconOnly)
-        .padding([.top, .leading, .trailing])
+//        Picker("", selection: $currentPane) {
+//            ForEach(GridEditorInspectorPane.allCases, id: \.self) { mode in
+//                Label(mode.name, systemImage: mode.icon)
+//                    .tag(mode)
+//            }
+//        }
+//        .pickerStyle(.segmented)
+//        .labelStyle(.iconOnly)
+//        .padding([.top, .leading, .trailing])
         
         Form {
             Group {
@@ -52,25 +53,28 @@ struct GridEditorInspector: View {
                 case .currentTool:
                     contextualForm
                 case .document:
-                    Group {
-                        Section("Metadata") {
-                            TextField("Name", text: $document.document.name)
-                            TextField("Author", text: $document.document.author)
-                            
-                            Picker("Icon", selection: $document.document.icon) {
-                                ForEach(WTPDocument.FileIcon.allCases) { icon in
-                                    Text(icon.name).tag(icon, includeOptional: true)
-                                }
-                            }
-                        }
-                        
-                        Section("Challenges") {
-                            TextField("Timer (seconds)", value: $document.document.timer, format: .number)
-                        }
+                    documentProperties
+                }
+            }
+        }
+    }
+
+    private var documentProperties: some View {
+        Group {
+            Section("Metadata") {
+                TextField("Name", text: $document.document.name)
+                TextField("Author", text: $document.document.author)
+                
+                Picker("Icon", selection: $document.document.icon) {
+                    ForEach(WTPDocument.FileIcon.allCases) { icon in
+                        Text(icon.name).tag(icon, includeOptional: true)
                     }
                 }
             }
             
+            Section("Challenges") {
+                TextField("Timer (seconds)", value: $document.document.timer, format: .number)
+            }
         }
     }
     

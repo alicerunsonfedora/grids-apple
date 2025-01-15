@@ -1,23 +1,26 @@
 {
   "configurations" : [
     {
-      "id" : "E5EBE722-8D01-4A52-98C8-D675702A5E09",
-      "name" : "Test Scheme Action",
+      "id" : "DD9D338F-3B22-40F7-933F-6BF73D6D839B",
+      "name" : "Configuration 1",
       "options" : {
 
       }
     }
   ],
   "defaultOptions" : {
-    "targetForVariableExpansion" : {
-      "containerPath" : "container:Grids.xcodeproj",
-      "identifier" : "95357B122D2087A500E4C8EC",
-      "name" : "Grids"
-    }
+    "testTimeoutsEnabled" : true
   },
   "testTargets" : [
     {
-      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Packages\/GridsCore",
+        "identifier" : "GridsCoreTests",
+        "name" : "GridsCoreTests"
+      }
+    },
+    {
+      "enabled" : false,
       "target" : {
         "containerPath" : "container:Grids.xcodeproj",
         "identifier" : "95357B232D2087A600E4C8EC",

@@ -5,18 +5,9 @@
 //  Created by Marquis Kurt on 28-12-2024.
 //
 
+import GridsCore
 import SwiftUI
 import PuzzleKit
-
-extension PKTaijiPuzzle {
-    init?(decodingOrNull decode: String) {
-        do {
-            self = try .init(decoding: decode)
-        } catch {
-            return nil
-        }
-    }
-}
 
 struct TaijiPuzzle: View {
     @ScaledMetric var scale = 64
