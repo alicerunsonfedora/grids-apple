@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "%lld x %lld" : {
       "localizations" : {
         "en" : {
@@ -36,6 +39,9 @@
 
     },
     "Current Tool" : {
+
+    },
+    "Do you remember the maze?" : {
 
     },
     "General" : {

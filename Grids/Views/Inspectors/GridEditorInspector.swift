@@ -37,15 +37,15 @@ struct GridEditorInspector: View {
     @State private var currentPane = GridEditorInspectorPane.currentTool
         
     var body: some View {
-//        Picker("", selection: $currentPane) {
-//            ForEach(GridEditorInspectorPane.allCases, id: \.self) { mode in
-//                Label(mode.name, systemImage: mode.icon)
-//                    .tag(mode)
-//            }
-//        }
-//        .pickerStyle(.segmented)
-//        .labelStyle(.iconOnly)
-//        .padding([.top, .leading, .trailing])
+        Picker("", selection: $currentPane) {
+            ForEach(GridEditorInspectorPane.allCases, id: \.self) { mode in
+                Label(mode.name, systemImage: mode.icon)
+                    .tag(mode)
+            }
+        }
+        .pickerStyle(.segmented)
+        .labelStyle(.iconOnly)
+        .padding([.top, .leading, .trailing])
         
         Form {
             Group {
