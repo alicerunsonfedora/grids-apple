@@ -14,7 +14,7 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Packages\/GridsCore",
+        "containerPath" : "container:",
         "identifier" : "GridsCoreTests",
         "name" : "GridsCoreTests"
       }
