@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "70F7EFE1-08A6-40EF-9E3C-8E87782BC209",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/GridsCore",
+        "identifier" : "GridsCoreTests",
+        "name" : "GridsCoreTests"
+      }
+    }
+  ],
+  "version" : 1
+}

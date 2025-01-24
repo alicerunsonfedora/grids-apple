@@ -81,3 +81,20 @@ public struct IssueView: View {
     }
     .listStyle(.sidebar)
 }
+
+#if DEBUG
+extension IssueView {
+    var testHooks: TestHooks { TestHooks(target: self) }
+    
+    struct TestHooks {
+        private let target: IssueView
+        
+        fileprivate init(target: IssueView) {
+            self.target = target
+        }
+        
+        func symbol() async -> String { await target.symbol }
+        func symbolColor() async -> Color { await target.symbolColor }
+    }
+}
+#endif

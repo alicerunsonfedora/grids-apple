@@ -7,9 +7,10 @@
    <FileRef
       location = "group:LICENSE.txt">
    </FileRef>
-   <FileRef
-      location = "group:Grids.xctestplan">
-   </FileRef>
+   <FileSystemSynchronizedGroup
+      location = "group:Test Plans"
+      name = "Test Plans">
+   </FileSystemSynchronizedGroup>
    <FileRef
       location = "group:Grids.xcodeproj">
    </FileRef>

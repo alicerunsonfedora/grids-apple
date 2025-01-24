@@ -14,17 +14,16 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Packages\/GridsCore",
-        "identifier" : "GridsCoreTests",
-        "name" : "GridsCoreTests"
-      }
-    },
-    {
-      "enabled" : false,
-      "target" : {
         "containerPath" : "container:Grids.xcodeproj",
         "identifier" : "95357B232D2087A600E4C8EC",
         "name" : "GridsTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/GridsCore",
+        "identifier" : "GridsCoreTests",
+        "name" : "GridsCoreTests"
       }
     }
   ],
