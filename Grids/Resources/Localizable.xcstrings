@@ -38,6 +38,12 @@
     "Current Tool" : {
 
     },
+    "Document" : {
+
+    },
+    "Format" : {
+
+    },
     "General" : {
 
     },
@@ -45,6 +51,9 @@
 
     },
     "Inspector" : {
+
+    },
+    "Issues" : {
 
     },
     "Layout Editor" : {
@@ -72,6 +81,9 @@
 
     },
     "Puzzle Player" : {
+
+    },
+    "Puzzles" : {
 
     },
     "Quick Share" : {

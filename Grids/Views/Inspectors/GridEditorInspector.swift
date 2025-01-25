@@ -17,9 +17,9 @@ private enum GridEditorInspectorPane: NavigatorItem, CaseIterable {
     var name: String {
         switch self {
         case .currentTool:
-            "Format"
+            String(localized: "Format")
         case .document:
-            "Document"
+            String(localized: "Document")
         }
     }
     

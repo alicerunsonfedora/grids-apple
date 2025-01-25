@@ -17,9 +17,9 @@ enum GridEditorNavigator: NavigatorItem, CaseIterable {
     var name: String {
         switch self {
         case .puzzleSet:
-            "Puzzles"
+            String(localized: "Puzzles")
         case .issues:
-            "Issues"
+            String(localized: "Issues")
         }
     }
     
