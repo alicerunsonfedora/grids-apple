@@ -59,3 +59,29 @@ public struct IssueCounterView: View {
     ])
     .padding()
 }
+
+#if DEBUG
+extension IssueCounterView {
+    var testHooks: TestHooks { TestHooks(target: self) }
+    
+    struct TestHooks {
+        private let target: IssueCounterView
+        
+        fileprivate init(target: IssueCounterView) {
+            self.target = target
+        }
+        
+        func errors() async -> Int {
+            await target.errors
+        }
+        
+        func warnings() async -> Int {
+            await target.warnings
+        }
+        
+        func runtimeWarnings() async -> Int {
+            await target.runtimeWarnings
+        }
+    }
+}
+#endif
