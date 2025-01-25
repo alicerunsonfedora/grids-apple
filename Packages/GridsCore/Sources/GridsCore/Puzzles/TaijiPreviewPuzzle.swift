@@ -44,3 +44,21 @@ public struct TaijiPreviewPuzzleView: View {
 #Preview {
     TaijiPreviewPuzzleView("6:0Cw+CY0Aw0Cw+DDw0Sw+CDw0Bw+CCw0Tw+BSw+BUw0")
 }
+
+#if DEBUG
+extension TaijiPreviewPuzzleView {
+    var testHooks: TestHooks { TestHooks(target: self) }
+    
+    struct TestHooks {
+        private let target: TaijiPreviewPuzzleView
+        
+        fileprivate init(target: TaijiPreviewPuzzleView) {
+            self.target = target
+        }
+
+        func puzzleSize() async -> CGSize {
+            await target.size
+        }
+    }
+}
+#endif

@@ -1,0 +1,77 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Challenge" : {
+
+    },
+    "Color mechanics are unsupported on Playdate and will render as black." : {
+
+    },
+    "Gardens" : {
+
+    },
+    "Generic" : {
+
+    },
+    "Impossible constraints: all subtractive dots" : {
+
+    },
+    "Impossible constraints: mispaired diamonds" : {
+
+    },
+    "Mill" : {
+
+    },
+    "Mines" : {
+
+    },
+    "Puzzle Set" : {
+
+    },
+    "Shrine" : {
+
+    },
+    "There are an odd amount of diamonds in this puzzle, which might be unsolvable." : {
+
+    },
+    "There are subtractive dots in this puzzle with no additive dots to cancel out or subtract from." : {
+
+    },
+    "This puzzle contains symbols with multiple color types." : {
+
+    },
+    "This puzzle is %d x %d tiles, which exceeds 22 x 13 tiles." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This puzzle is %1$d x %2$d tiles, which exceeds 22 x 13 tiles."
+          }
+        }
+      }
+    },
+    "This puzzle is %lld x %lld tiles, which exceeds 22 x 13 tiles." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "This puzzle is %1$lld x %2$lld tiles, which exceeds 22 x 13 tiles."
+          }
+        }
+      }
+    },
+    "This puzzle is bigger than the recommended 11 x 6 tiles, which will render at half scale." : {
+
+    },
+    "This puzzle is too big for Playdate." : {
+
+    },
+    "This puzzle might not be easily readable on Playdate." : {
+
+    },
+    "Tutorial" : {
+
+    }
+  },
+  "version" : "1.0"
+}
