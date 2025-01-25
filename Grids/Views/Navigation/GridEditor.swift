@@ -25,7 +25,7 @@ struct GridEditor: View {
     var body: some View {
         NavigationSplitView {
             Divider()
-            NavigatorPanePicker(selection: $navigatorPane)
+            NavigatorGroup(selection: $navigatorPane)
             Divider()
             Group {
                 switch navigatorPane {

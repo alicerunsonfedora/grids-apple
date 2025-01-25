@@ -8,9 +8,11 @@
 import GridsCore
 import SwiftUI
 
-private enum GridEditorInspectorPane: Hashable, CaseIterable {
+private enum GridEditorInspectorPane: NavigatorItem, CaseIterable {
     case currentTool
     case document
+
+    var id: String { self.name }
     
     var name: String {
         switch self {
@@ -21,13 +23,17 @@ private enum GridEditorInspectorPane: Hashable, CaseIterable {
         }
     }
     
-    var icon: String {
+    var symbol: String {
         switch self {
         case .currentTool:
             "paintbrush"
         case .document:
             "document"
         }
+    }
+
+    var help: String {
+        String(localized: "Show the \(name) inspector")
     }
 }
 
@@ -37,15 +43,9 @@ struct GridEditorInspector: View {
     @State private var currentPane = GridEditorInspectorPane.currentTool
         
     var body: some View {
-        Picker("", selection: $currentPane) {
-            ForEach(GridEditorInspectorPane.allCases, id: \.self) { mode in
-                Label(mode.name, systemImage: mode.icon)
-                    .tag(mode)
-            }
-        }
-        .pickerStyle(.segmented)
-        .labelStyle(.iconOnly)
-        .padding([.top, .leading, .trailing])
+        Divider()
+        NavigatorGroup(selection: $currentPane, scale: .medium)
+        Divider()
         
         Form {
             Group {

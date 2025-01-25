@@ -29,10 +29,19 @@ components to make versions of the Grids app that are finely tuned to each appli
 - ``IssueView``
 - ``IssueCounterView``
 
-### Validators
+### Navigator
 
-- ``PuzzleIssueValidator``
+- ``NavigatorItem``
+- ``NavigatorGroup``
 
 ### Puzzle Views
 
 - ``TaijiPreviewPuzzleView``
+
+### Services
+
+- ``TaijiWebShare``
+
+### Validators
+
+- ``PuzzleIssueValidator``

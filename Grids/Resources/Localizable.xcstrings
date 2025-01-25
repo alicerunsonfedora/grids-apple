@@ -1,9 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-
-    },
     "%lld x %lld" : {
       "localizations" : {
         "en" : {
@@ -50,9 +47,6 @@
     "Inspector" : {
 
     },
-    "Issues" : {
-
-    },
     "Layout Editor" : {
 
     },
@@ -80,9 +74,6 @@
     "Puzzle Player" : {
 
     },
-    "Puzzles" : {
-
-    },
     "Quick Share" : {
 
     },
@@ -102,6 +93,12 @@
 
     },
     "Show live issues" : {
+
+    },
+    "Show the %@ inspector" : {
+
+    },
+    "Show the %@ navigator" : {
 
     },
     "Solved" : {
