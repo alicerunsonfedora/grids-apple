@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="311px" height="312px" viewBox="0 0 311 312" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Flower</title>
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="72.1093507%" id="radialGradient-1">
+            <stop stop-color="color(display-p3 0.239 0.220 0.275)" offset="0%"></stop>
+            <stop stop-color="color(display-p3 0.141 0.122 0.192)" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="App-Icon" transform="translate(-583, -129)">
+            <g id="Flower" transform="translate(583, 129)">
+                <path d="M194.375,156 L272.125,156 L272.125,195 L194.375,195 L194.375,156 Z M116.625,273 L116.625,312 L38.875,312 L38.875,273 L116.625,273 Z M155.5,195 L155.5,273 L116.625,273 L116.625,195 L155.5,195 Z M77.75,195 L77.75,234 L38.874,234 L38.875,273 L0,273 L0,195 L77.75,195 Z M272.125,195 L311,195 L311,273 L272.125,273 L272.125,195 Z M233.25,234 L233.25,273 L272.125,273 L272.125,312 L233.25,312 L233.249,311.999 L194.375,312 L194.375,234 L233.25,234 Z" id="Combined-Shape" fill="color(display-p3 0.753 0.380 0.796)" fill-rule="nonzero"></path>
+                <path d="M116.625,-1.13686838e-13 L116.625,78 L77.75,78 L77.75,156 L38.875,156 L38.875,-1.13686838e-13 L116.625,-1.13686838e-13 Z M116.625,117 L116.625,156 L77.75,156 L77.75,117 L116.625,117 Z M272.125,117 L233.25,117 L233.249,78 L194.375,78 L194.375,-1.13686838e-13 L272.125,-1.13686838e-13 L272.125,39 L311,39 L311,117 L272.125,117 L272.125,78 L272.124,78 L272.125,117 Z M0,39 L38.875,39 L38.875,117 L0,117 L0,39 Z M155.5,39 L194.375,39 L194.375,117 L155.5,117 L155.5,39 Z" id="Combined-Shape" fill="color(display-p3 0.973 0.894 0.361)" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,117 @@
+{
+  "color-space-for-untagged-svg-colors" : "display-p3",
+  "fill" : {
+    "linear-gradient" : [
+      "display-p3:0.23926,0.21960,0.27441,1.00000",
+      "display-p3:0.14124,0.12158,0.19214,1.00000"
+    ]
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "hidden" : false,
+          "image-name" : "Diamond 2.svg",
+          "name" : "Diamond 2",
+          "position-specializations" : [
+            {
+              "idiom" : "square",
+              "value" : {
+                "scale" : 1,
+                "translation-in-points" : [
+                  192,
+                  192
+                ]
+              }
+            },
+            {
+              "idiom" : "watchOS",
+              "value" : {
+                "scale" : 1,
+                "translation-in-points" : [
+                  192,
+                  192
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "glass" : true,
+          "image-name" : "Flower.svg",
+          "name" : "Flower",
+          "position-specializations" : [
+            {
+              "value" : {
+                "scale" : 1,
+                "translation-in-points" : [
+                  191.6875,
+                  -194.546875
+                ]
+              }
+            },
+            {
+              "idiom" : "square",
+              "value" : {
+                "scale" : 1,
+                "translation-in-points" : [
+                  192,
+                  -192
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "image-name" : "Diamond.svg",
+          "name" : "Diamond",
+          "position-specializations" : [
+            {
+              "value" : {
+                "scale" : 1,
+                "translation-in-points" : [
+                  -191.765625,
+                  -182.9921875
+                ]
+              }
+            },
+            {
+              "idiom" : "square",
+              "value" : {
+                "scale" : 1,
+                "translation-in-points" : [
+                  -204,
+                  -192
+                ]
+              }
+            },
+            {
+              "idiom" : "watchOS",
+              "value" : {
+                "scale" : 1,
+                "translation-in-points" : [
+                  -204,
+                  -182.9921875
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

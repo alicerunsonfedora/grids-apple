@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="310px" height="313px" viewBox="0 0 310 313" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Diamond</title>
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="72.1093507%" id="radialGradient-1">
+            <stop stop-color="color(display-p3 0.239 0.220 0.275)" offset="0%"></stop>
+            <stop stop-color="color(display-p3 0.141 0.122 0.192)" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="App-Icon" transform="translate(-129, -129)" fill="color(display-p3 1.000 0.639 0.282)" fill-rule="nonzero">
+            <path d="M324,129 L324,168 L363,168 L363,207 L400,207 L400,247 L439,247 L439,325 L400,325 L400,364 L363,364 L363,403 L324,403 L324,442 L246,442 L246,403 L207,403 L207,364 L168,364 L168,325 L129,325 L129,247 L168,247 L168,207 L207,207 L207,168 L246,168 L246,129 L324,129 Z" id="Diamond"></path>
+        </g>
+    </g>
+</svg>
