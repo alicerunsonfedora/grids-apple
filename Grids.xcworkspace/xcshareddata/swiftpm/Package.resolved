@@ -1,5 +1,5 @@
 {
-  "originHash" : "85dafece59bb709c76a0781badc8a8da172ec4e917bfdea84825d8cb6d599b2b",
+  "originHash" : "151086e6369ee7e3d0f837f81fba87e2ba39a582ee31e4e1584c12bab60878c2",
   "pins" : [
     {
       "identity" : "adwaita-swift",
@@ -87,8 +87,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/nalexn/ViewInspector",
       "state" : {
-        "revision" : "788e7879d38a839c4e348ab0762dcc0364e646a2",
-        "version" : "0.10.1"
+        "revision" : "e9a06346499a3a889165647e3f23f8a7b2609a1c",
+        "version" : "0.10.3"
       }
     },
     {

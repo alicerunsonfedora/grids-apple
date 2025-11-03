@@ -5,6 +5,8 @@
 //  Created by Marquis Kurt on 24-01-2025.
 //
 
+#if canImport(SwiftUI)
+
 import Testing
 import SwiftUI
 import ViewInspector
@@ -72,3 +74,5 @@ struct IssueCounterViewTests {
         #expect(sut.count(where: \.isAbsent) == 2)
     }
 }
+
+#endif

@@ -5,6 +5,8 @@
 //  Created by Marquis Kurt on 06-01-2025.
 //
 
+#if canImport(SwiftUI)
+
 import Testing
 import SwiftUI
 import PuzzleKit
@@ -76,3 +78,5 @@ struct WTPFileTests {
         #expect(file.document.puzzleCodes.count == 1)
     }
 }
+
+#endif

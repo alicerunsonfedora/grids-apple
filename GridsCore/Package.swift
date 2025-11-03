@@ -16,7 +16,6 @@ let package = Package(
     dependencies: [
         .package(url: "https://source.marquiskurt.net/What-the-Taiji/PuzzleKit", branch: "main"),
         .package(url: "https://github.com/nalexn/ViewInspector", from: "0.10.0"),
-//        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.12.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -34,8 +33,7 @@ let package = Package(
             dependencies: [
                 "GridsCore",
                 .product(name: "PuzzleKit", package: "PuzzleKit"),
-                .product(name: "ViewInspector", package: "ViewInspector"),
-//                .product(name: "SnapshotTesting", package: "swift-snapshot-testing"),
+                .product(name: "ViewInspector", package: "ViewInspector", condition: .when(platforms: [.macOS, .iOS])),
             ]
         ),
     ]

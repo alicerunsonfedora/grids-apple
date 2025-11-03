@@ -5,6 +5,8 @@
 //  Created by Marquis Kurt on 13-01-2025.
 //
 
+#if canImport(SwiftUI)
+
 import SwiftUI
 
 /// A view that displays the number of issues, organized by severity.
@@ -84,4 +86,6 @@ extension IssueCounterView {
         }
     }
 }
+#endif
+
 #endif

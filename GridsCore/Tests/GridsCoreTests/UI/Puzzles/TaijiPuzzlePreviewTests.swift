@@ -5,6 +5,8 @@
 //  Created by Marquis Kurt on 24-01-2025.
 //
 
+#if canImport(SwiftUI)
+
 import Testing
 import SwiftUI
 import ViewInspector
@@ -35,3 +37,5 @@ struct TaijiPuzzlePreviewTests {
         #expect(try image.actualImage().name() == "square")
     }
 }
+
+#endif

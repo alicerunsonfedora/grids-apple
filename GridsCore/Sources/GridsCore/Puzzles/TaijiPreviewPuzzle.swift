@@ -5,6 +5,8 @@
 //  Created by Marquis Kurt on 29-12-2024.
 //
 
+#if canImport(SwiftUI)
+
 import PuzzleKit
 import SwiftUI
 
@@ -61,4 +63,6 @@ extension TaijiPreviewPuzzleView {
         }
     }
 }
+#endif
+
 #endif

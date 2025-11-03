@@ -5,7 +5,9 @@
 //  Created by Marquis Kurt on 26-01-2025.
 //
 
+#if canImport(SwiftUI)
 import SwiftUI
+#endif
 
 /// A protocol representing an item that has a default selection.
 public protocol DefaultSelectionProvider: CaseIterable {
@@ -17,6 +19,8 @@ public protocol DefaultSelectionProvider: CaseIterable {
 ///
 /// Navigator tab items provide a default selection and must be sendable.
 public typealias NavigatorTabItem = NavigatorItem & DefaultSelectionProvider & Sendable
+
+#if canImport(SwiftUI)
 
 /// A tab view used to display navigator panes.
 public struct NavigatorTabView<N: NavigatorTabItem, D: View>: View where N.AllCases: RandomAccessCollection {
@@ -72,4 +76,6 @@ extension NavigatorTabView {
         }
     }
 }
+#endif
+
 #endif

@@ -5,6 +5,8 @@
 //  Created by Marquis Kurt on 13-01-2025.
 //
 
+#if canImport(SwiftUI)
+
 import SwiftUI
 
 /// A view that displays an issue in the issue navigator.
@@ -97,4 +99,6 @@ extension IssueView {
         func symbolColor() async -> Color { await target.symbolColor }
     }
 }
+#endif
+
 #endif

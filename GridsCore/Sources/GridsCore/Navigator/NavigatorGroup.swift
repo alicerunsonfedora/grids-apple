@@ -5,6 +5,8 @@
 //  Created by Marquis Kurt on 25-01-2025.
 //
 
+#if canImport(SwiftUI)
+
 import SwiftUI
 
 
@@ -74,4 +76,6 @@ extension NavigatorGroup {
         }
     }
 }
+#endif
+
 #endif

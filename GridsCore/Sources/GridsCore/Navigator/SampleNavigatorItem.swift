@@ -5,7 +5,7 @@
 //  Created by Marquis Kurt on 26-01-2025.
 //
 
-#if DEBUG
+#if DEBUG && canImport(SwiftUI)
 import SwiftUI
 
 enum SampleNavigatorItem: NavigatorItem, CaseIterable {

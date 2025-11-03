@@ -5,6 +5,8 @@
 //  Created by Marquis Kurt on 25-01-2025.
 //
 
+#if canImport(SwiftUI)
+
 import Testing
 import SwiftUI
 import ViewInspector
@@ -47,3 +49,5 @@ struct NavigatorGroupTests {
         }
     }
 }
+
+#endif
