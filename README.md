@@ -1,13 +1,17 @@
 # Grids
 
-Create and edit Taiji puzzles for What the Taiji?! on macOS and Linux.
+<img src='Grids/Resources/Assets.xcassets/GridsAppIcon.imageset/Grids%20v2%20Icon-iOS-Default-1024x1024@1x.png' width='128' align='right' />
 
-![Screenshot of the editor](.readme/screenshot.png)
+Create and edit Taiji puzzles for What the Taiji?! on macOS and Linux.
 
 **Grids** is a free puzzle editor for Mac and Linux devices that lets you
 create and edit puzzle in the style/mechanics of
 [Taiji](https://taiji-game.com), saved as
-[What the Taiji?!](https://marquiskurt.itch.io/what-the-taiji) puzzle files.
+[What the Taiji?!](https://marquiskurt.itch.io/what-the-taiji) puzzle files. 
+Grids is designed to look native on macOS and Linux and provide a pleasant
+editing experience.
+
+![Screenshot of the editor](.readme/screenshot.png)
 
 **Features**  
 - Create and manage multiple puzzles together in a single set.
@@ -57,8 +61,9 @@ The classic Grids icon was created by VegasOs.
 
 Grids was made possible thanks to the following open-source software:
 
-- **PuzzleKit**: Marquis Kurt - MIT License
-- **Adwaita for Swift**: david-swift - MIT License
+- **Adwaita for Swift**: MIT License
+- **DocumentKit**: MPLv2 License
+- **PuzzleKit**: MIT License
 
 Special thanks to these amazing people:
 - Grant Neufeld
