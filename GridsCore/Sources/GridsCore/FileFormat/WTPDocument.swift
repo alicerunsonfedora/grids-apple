@@ -20,59 +20,9 @@ import SwiftUI
 /// This structure can be treated as if it were a `Codable` struct. For the file type that is handled with SwiftUI,
 /// see ``WTPFile``.
 public struct WTPDocument: Sendable {
-    /// An enumeration representing the various icon types available.
-    public enum FileIcon: Int, Identifiable, Sendable, CaseIterable {
-        /// A generic file icon.
-        case generic = 1
-        
-        /// A flower icon representing the Gardens section of Taiji.
-        case gardens = 2
-        
-        /// A slashdash icon representing the Mill section of Taiji.
-        case mill = 3
-        
-        /// A diamond icon representing the Mines section of Taiji.
-        case mines = 4
-        
-        /// A five dot icon representing the Shrine section of Taiji.
-        case shrine = 5
-        
-        /// A race flag representing a puzzle challenge.
-        case challenge = 7
-        
-        /// A set of curly braces representing a puzzle set.
-        case set = 9
-        
-        /// A graduation cap representing a tutorial.
-        case tutorial = 10
-        
-        /// The human-friendly name of the icon.
-        public var name: LocalizedStringKey {
-            switch self {
-            case .generic:
-                "Generic"
-            case .gardens:
-                "Gardens"
-            case .mill:
-                "Mill"
-            case .mines:
-                "Mines"
-            case .shrine:
-                "Shrine"
-            case .challenge:
-                "Challenge"
-            case .set:
-                "Puzzle Set"
-            case .tutorial:
-                "Tutorial"
-            }
-        }
-        
-        /// The file icon's unique identifier.
-        public var id: Int {
-            self.rawValue
-        }
-    }
+    /// A typealias that points to a file icon type.
+    @available(*, deprecated, renamed: "WTPFileIcon")
+    public typealias FileIcon = WTPFileIcon
 
     /// The file's name.
     public var name: String
@@ -81,7 +31,7 @@ public struct WTPDocument: Sendable {
     public var author: String
 
     /// The icon that appears in the puzzle picker.
-    public var icon: FileIcon
+    public var icon: WTPFileIcon
 
     /// The Taiji puzzle codes that consist of this puzzle file.
     public var puzzleCodes: [String]
@@ -97,7 +47,7 @@ public extension WTPDocument {
     /// - Parameter contents: The contents of the string value to decode from.
     init(reading contents: String) {
         var puzzleCodes = [String]()
-        var icon: FileIcon = .generic
+        var icon: WTPFileIcon = .generic
         var name: String = ""
         var author: String = ""
         var timer = 0
@@ -116,7 +66,7 @@ public extension WTPDocument {
                 author = value
             case "icon":
                 let iconID = Int(value)
-                icon = FileIcon(rawValue: iconID ?? 0) ?? .generic
+                icon = WTPFileIcon(rawValue: iconID ?? 0) ?? .generic
             case "puzzle":
                 let puzzles = value.components(separatedBy: ";")
                 puzzleCodes.append(contentsOf: puzzles)

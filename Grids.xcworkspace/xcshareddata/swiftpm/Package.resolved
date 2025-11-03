@@ -1,5 +1,5 @@
 {
-  "originHash" : "151086e6369ee7e3d0f837f81fba87e2ba39a582ee31e4e1584c12bab60878c2",
+  "originHash" : "3309ecd18c1291c17a69c34a6a5b993b7f347c49815cf66575845ff97b19e51b",
   "pins" : [
     {
       "identity" : "adwaita-swift",
@@ -16,7 +16,7 @@
       "location" : "https://source.marquiskurt.net/marquiskurt/DocumentKit",
       "state" : {
         "branch" : "main",
-        "revision" : "6c2cea7dd82dbffebee1a3962c9e4c6e6ea03c33"
+        "revision" : "55f1541d3c2ad0193a7554b6d01353adc1ce6163"
       }
     },
     {

@@ -2,6 +2,7 @@ import DocumentKit
 import Foundation
 import PuzzleKit
 
+@available(*, deprecated, message: "Use WTPFile with the `document` property.")
 struct WTPuzzle: Document {
     static var readableContentExtensions: [String] { ["wtp"] }
 

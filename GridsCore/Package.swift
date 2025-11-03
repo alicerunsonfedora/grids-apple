@@ -14,6 +14,7 @@ let package = Package(
             targets: ["GridsCore"]),
     ],
     dependencies: [
+        .package(url: "https://source.marquiskurt.net/marquiskurt/DocumentKit", branch: "main"),
         .package(url: "https://source.marquiskurt.net/What-the-Taiji/PuzzleKit", branch: "main"),
         .package(url: "https://github.com/nalexn/ViewInspector", from: "0.10.0"),
     ],
@@ -23,6 +24,7 @@ let package = Package(
         .target(
             name: "GridsCore",
             dependencies: [
+                .product(name: "DocumentKit", package: "DocumentKit"),
                 .product(name: "PuzzleKit", package: "PuzzleKit")
             ],
             resources: [

@@ -6,13 +6,6 @@
 //
 
 import PuzzleKit
-import SwiftUI
-import UniformTypeIdentifiers
-
-public extension UTType {
-    /// The uniform type identifier associated with What the Taiij?! puzzle files (.wtp).
-    static let wtp = UTType(exportedAs: "net.marquiskurt.wtpFile")
-}
 
 public extension PKTaijiPuzzle {
     /// Creates a puzzle, decoding a Taiji puzzle code or returning `nil` if decoding fails.
@@ -30,7 +23,7 @@ public extension PKTaijiPuzzle {
 }
 
 /// A file structure representing an open file for What the Taiji?! puzzle files.
-public struct WTPFile: FileDocument {
+public struct WTPFile: Sendable {
     /// A convenience typealias referring to the index or pointer in a puzzle code list.
     public typealias Pointer = [PKTaijiPuzzle].Index
 
@@ -48,7 +41,6 @@ public struct WTPFile: FileDocument {
     /// The location of where the current puzzle is in the document's list of codes.
     public var currentPuzzleIndex: Pointer = 0
 
-    public static var readableContentTypes: [UTType] { [.wtp] }
 
     /// A mapping of decoded puzzles in the file, accounting for their position in the file.
     public var puzzles: [WTPFilePuzzle] {
@@ -61,27 +53,9 @@ public struct WTPFile: FileDocument {
 
     /// Creates an empty document with an empty 3x3 puzzle board.
     public init() {
-        document = .init(name: "Untitled Puzzle", author: "Author", icon: .generic, puzzleCodes: ["3:+I"])
+        document = WTPDocument(name: "Untitled Puzzle", author: "Author", icon: .generic, puzzleCodes: ["3:+I"])
         currentPuzzle = PKTaijiPuzzle(size: .init(width: 3, height: 3))
         currentPuzzleIndex = 0
-    }
-    
-    public init(configuration: ReadConfiguration) throws {
-        guard let data = configuration.file.regularFileContents,
-              let string = String(data: data, encoding: .utf8)
-        else {
-            throw CocoaError(.fileReadCorruptFile)
-        }
-        document = WTPDocument(reading: string)
-        currentPuzzle = try PKTaijiPuzzle(decoding: document.puzzleCodes.first ?? "1:0")
-        currentPuzzleIndex = document.puzzleCodes.startIndex
-    }
-    
-    public func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let encodedContents = document.encoded()
-        let data = Data(encodedContents.utf8)
-        
-        return .init(regularFileWithContents: data)
     }
 
     // MARK: - Sets
