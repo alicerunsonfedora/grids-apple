@@ -57,40 +57,6 @@ public struct NavigatorGroup<T: NavigatorItem & CaseIterable>: View where T.AllC
 }
 
 #if DEBUG
-enum SampleNavigatorItem: NavigatorItem, CaseIterable {
-    case files
-    case issues
-    case tests
-    
-    var id: String { self.symbol }
-
-    var symbol: String {
-        switch self {
-        case .files:
-            "folder"
-        case .issues:
-            "exclamationmark.triangle"
-        case .tests:
-            "checkmark.diamond"
-        }
-    }
-
-    var name: String {
-        switch self {
-        case .files:
-            return "Files"
-        case .issues:
-            return "Issues"
-        case .tests:
-            return "Tests"
-        }
-    }
-    
-    var help: String {
-        "Show the \(self.name) navigator"
-    }
-}
-
 // MARK: - Test Hooks
 
 extension NavigatorGroup {
