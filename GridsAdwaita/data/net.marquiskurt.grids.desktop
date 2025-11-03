@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=Grids
+Comment=Create and edit puzzles for What the Taiji?!
+Categories=Development;GNOME;
+
+Icon=net.marquiskurt.grids
+Exec=Grids
+Terminal=false

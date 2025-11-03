@@ -1,11 +1,12 @@
 # Grids
 
-Create and edit Taiji puzzles for What the Taiji?! on your Mac.
+Create and edit Taiji puzzles for What the Taiji?! on macOS and Linux.
 
 ![Screenshot of the editor](.readme/screenshot.png)
 
-**Grids** is a free puzzle editor for the Mac that lets you create and edit
-puzzles in the style/mechanics of [Taiji](https://taiji-game.com), saved as
+**Grids** is a free puzzle editor for Mac and Linux devices that lets you
+create and edit puzzle in the style/mechanics of
+[Taiji](https://taiji-game.com), saved as
 [What the Taiji?!](https://marquiskurt.itch.io/what-the-taiji) puzzle files.
 
 **Features**  
@@ -17,12 +18,32 @@ puzzles in the style/mechanics of [Taiji](https://taiji-game.com), saved as
 
 ## Build from source
 
+### Build for macOS
+
 **Requirements**  
 - macOS Sequoia (15.0) or later
 - Xcode 16.2 or later
 
-Start by cloning this repository with `git clone`, then open the Grids.xcworkspace
-file on your Mac. Finally, select the "Grids" target and run the project.
+Start by cloning this repository with `git clone`, then open the
+Grids.xcworkspace file on your Mac. Finally, select the "Grids" target and
+run the project.
+
+### Build for Linux/Adwaita
+
+> **Note**  
+> The Linux/Adwaita version is still a work in progress and is not fully
+> featured compared to its macOS counterpart. Proceed with caution.
+
+**Requirements**  
+- GNOME Builder
+- Swift v6 or later
+
+Start by cloning this repository with `git clone`, then open the
+`GridsAdwaita` project in GNOME Builder. Dependencies should be fetched
+automatically within GNOME Builder.
+
+Finally, press the Run button in GNOME Builder to build and run the
+project.
 
 ## License
 
@@ -30,17 +51,14 @@ Grids is free and open-source software licensed under the MIT License.
 
 ### Credits
 
-> **Note**  
-> For the most up-to-date credits information, refer to the Credits.rtf file
-> listed in this project's resources.
-
 Taiji and the Taiji puzzle mechanics were created by Matthew VanDevander.
 
-The Grids icon was created by VegasOs.
+The classic Grids icon was created by VegasOs.
 
 Grids was made possible thanks to the following open-source software:
 
 - **PuzzleKit**: Marquis Kurt - MIT License
+- **Adwaita for Swift**: david-swift - MIT License
 
 Special thanks to these amazing people:
 - Grant Neufeld
@@ -51,3 +69,4 @@ Special thanks to these amazing people:
 - Paul Straw
 - Doge4ever05
 - Matthew VanDevander
+- david-swift

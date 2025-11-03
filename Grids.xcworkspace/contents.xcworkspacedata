@@ -15,6 +15,9 @@
       location = "group:Grids.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Packages/GridsCore">
+      location = "group:GridsAdwaita">
+   </FileRef>
+   <FileRef
+      location = "group:GridsCore">
    </FileRef>
 </Workspace>

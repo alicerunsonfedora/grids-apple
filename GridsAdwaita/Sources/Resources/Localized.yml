@@ -1,0 +1,108 @@
+default: en
+
+appName:
+    en: Grids
+
+helloWorld:
+    en: Hello, world!
+    de: Hallo, Welt!
+
+about:
+    en: About Grids
+    de: Info zu Grids
+
+openTruncated:
+    en: "Open..."
+
+saveTruncated:
+    en: "Save"
+
+noOptions:
+    en: "No Options"
+
+sizeWidth:
+    en: Width
+
+sizeHeight:
+    en: Height
+
+doneButton:
+    en: Done
+
+selectedState:
+    en: Selected
+
+untitledPuzzle:
+    en: Untitled Puzzle
+
+puzzleName:
+    en: Puzzle Name
+
+puzzleAuthor:
+    en: Puzzle Author
+
+puzzleIcon:
+    en: Icon
+
+puzzleSetHeader:
+    en: Puzzles
+
+tileFlipper:
+    en: Tile Flipper
+
+symbolPainter:
+    en: Symbol Painter
+
+layoutManager:
+    en: Layout Manager
+
+tileDecorator:
+    en: Tile Decorator
+
+symbolEraser:
+    en: Symbol Eraser
+
+editPuzzle:
+    en: Edit Puzzle
+
+previewPuzzle:
+    en: Preview
+
+puzzleSymbol:
+    en: Symbol
+
+puzzleSymbolValue:
+    en: Value
+
+puzzleDecorationStyle:
+    en: Decoration Style
+
+checkPuzzle:
+    en: Check...
+
+solutionCorrect:
+    en: Congratulations! You solved the puzzle.
+
+solutionIncorrect:
+    en: The solution you provided is incorrect.
+
+metadataNameTitle:
+    en: Rename Puzzle
+
+metadataAuthorTitle:
+    en: Assign an Author
+
+metadataIconTitle:
+    en: Set an Icon
+
+metadataNameDescription:
+    en: Choose a unique name that describes the puzzle.
+
+metadataAuthorDescription:
+    en: Provide the authors and contributors of the puzzle.
+
+metadataIconDescription:
+    en: Provide a unique icon that appears in the puzzle picker menu. Consider choosing an icon that represents the main mechanics of the puzzle.
+
+quit:
+    en: Quit

@@ -1,0 +1,54 @@
+{
+  "app-id": "net.marquiskurt.grids",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "46",
+  "sdk": "org.gnome.Sdk",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.swift6"
+  ],
+  "command": "Grids",
+  "finish-args": [
+    "--share=ipc",
+    "--socket=fallback-x11",
+    "--device=dri",
+    "--socket=wayland"
+  ],
+  "build-options": {
+    "append-path": "/usr/lib/sdk/swift6/bin",
+    "prepend-ld-library-path": "/usr/lib/sdk/swift6/lib"
+  },
+  "cleanup": [
+    "/include",
+    "/lib/pkgconfig",
+    "/man",
+    "/share/doc",
+    "/share/gtk-doc",
+    "/share/man",
+    "/share/pkgconfig",
+    "*.la",
+    "*.a"
+  ],
+  "modules": [
+    {
+      "name": "Grids",
+      "builddir": true,
+      "buildsystem": "simple",
+      "sources": [
+        {
+          "type": "dir",
+          "path": "."
+        }
+      ],
+      "build-commands": [
+        "./setup-offline.sh",
+        "swift build -c release --static-swift-stdlib --skip-update",
+        "strip .build/release/Grids",
+        "install -Dm755 .build/release/Grids /app/bin/Grids",
+        "install -Dm644 data/net.marquiskurt.grids.metainfo.xml $DESTDIR/app/share/metainfo/net.marquiskurt.grids.metainfo.xml",
+        "install -Dm644 data/net.marquiskurt.grids.desktop $DESTDIR/app/share/applications/net.marquiskurt.grids.desktop",
+        "install -Dm644 data/icons/net.marquiskurt.grids.svg $DESTDIR/app/share/icons/hicolor/scalable/apps/net.marquiskurt.grids.svg",
+        "install -Dm644 data/icons/net.marquiskurt.grids-symbolic.svg $DESTDIR/app/share/icons/hicolor/symbolic/apps/net.marquiskurt.grids-symbolic.svg"
+      ]
+    }
+  ]
+}

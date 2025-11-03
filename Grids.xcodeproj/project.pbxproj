@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		959C6FC72D36DD4D00374E0E /* GridsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 959C6FC62D36DD4D00374E0E /* GridsCore */; };
+		95CB314C2EB91CBC0018AB17 /* GridsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 95CB314B2EB91CBC0018AB17 /* GridsCore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				959C6FC72D36DD4D00374E0E /* GridsCore in Frameworks */,
+				95CB314C2EB91CBC0018AB17 /* GridsCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,14 +146,13 @@
 			buildRules = (
 			);
 			dependencies = (
-				959C6FC92D36DD5600374E0E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				95357B152D2087A500E4C8EC /* Grids */,
 			);
 			name = Grids;
 			packageProductDependencies = (
-				959C6FC62D36DD4D00374E0E /* GridsCore */,
+				95CB314B2EB91CBC0018AB17 /* GridsCore */,
 			);
 			productName = Grids;
 			productReference = 95357B132D2087A500E4C8EC /* Grids.app */;
@@ -213,7 +212,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					95357B122D2087A500E4C8EC = {
 						CreatedOnToolsVersion = 16.2;
@@ -239,7 +238,7 @@
 			mainGroup = 95357B0A2D2087A500E4C8EC;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				959C6FC22D36DD4000374E0E /* XCLocalSwiftPackageReference "Packages/GridsCore" */,
+				95CB314A2EB91CBC0018AB17 /* XCLocalSwiftPackageReference "GridsCore" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 95357B142D2087A500E4C8EC /* Products */;
@@ -312,10 +311,6 @@
 			target = 95357B122D2087A500E4C8EC /* Grids */;
 			targetProxy = 95357B2F2D2087A600E4C8EC /* PBXContainerItemProxy */;
 		};
-		959C6FC92D36DD5600374E0E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 959C6FC82D36DD5600374E0E /* GridsCore */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -353,7 +348,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -375,6 +372,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -415,7 +413,9 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -430,6 +430,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 			};
@@ -443,13 +444,15 @@
 				CODE_SIGN_ENTITLEMENTS = Grids/Grids.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Grids/Preview Content\"";
-				DEVELOPMENT_TEAM = FQQXSP79X3;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Grids/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -485,13 +488,15 @@
 				CODE_SIGN_ENTITLEMENTS = Grids/Grids.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Grids/Preview Content\"";
-				DEVELOPMENT_TEAM = FQQXSP79X3;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Grids/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -526,7 +531,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FQQXSP79X3;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
@@ -551,7 +556,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FQQXSP79X3;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
@@ -573,7 +578,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FQQXSP79X3;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
@@ -595,7 +600,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FQQXSP79X3;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
@@ -654,21 +659,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		959C6FC22D36DD4000374E0E /* XCLocalSwiftPackageReference "Packages/GridsCore" */ = {
+		95CB314A2EB91CBC0018AB17 /* XCLocalSwiftPackageReference "GridsCore" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/GridsCore;
+			relativePath = GridsCore;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		959C6FC62D36DD4D00374E0E /* GridsCore */ = {
+		95CB314B2EB91CBC0018AB17 /* GridsCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 959C6FC22D36DD4000374E0E /* XCLocalSwiftPackageReference "Packages/GridsCore" */;
-			productName = GridsCore;
-		};
-		959C6FC82D36DD5600374E0E /* GridsCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 959C6FC22D36DD4000374E0E /* XCLocalSwiftPackageReference "Packages/GridsCore" */;
 			productName = GridsCore;
 		};
 /* End XCSwiftPackageProductDependency section */

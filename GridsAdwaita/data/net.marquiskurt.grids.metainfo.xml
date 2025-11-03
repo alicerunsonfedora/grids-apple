@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>net.marquiskurt.grids</id>
+  
+  <name>Grids</name>
+  <summary>Create and edit puzzles for What the Taiji?!</summary>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  
+  <description>
+    <p>
+      This is a <em>long</em> description of this project. Yes - that is required!
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">net.marquiskurt.grids.desktop</launchable>
+</component>
+
